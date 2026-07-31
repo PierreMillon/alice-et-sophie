@@ -1,31 +1,5 @@
 {
   "stories": [],
-  "illustrations": [
-    {
-      "title": "Alice (7 ans, à gauche), Clothilde (33 ans, au centre) et Sophie (9 ans, à droite)",
-      "src": "portraits/famille.png"
-    },
-    {
-      "title": "Le Bossu d'Argueil",
-      "src": "portraits/bossu.png"
-    },
-    {
-      "title": "La Sorcière des Carpates",
-      "src": "portraits/sorciere.png"
-    },
-    {
-      "title": "Benjamin",
-      "src": "portraits/benjamin.png"
-    },
-    {
-      "title": "Aurèle Berthomé (le boucher)",
-      "src": "portraits/boucher.png"
-    },
-    {
-      "title": "Anatole (le grand-père)",
-      "src": "portraits/anatole.png"
-    }
-  ],
   "eveningStories": [
     {
       "title": "Le Bossu d'Argueil",
@@ -42,6 +16,12 @@
       "title": "Anomalie magnifique",
       "note": "Une histoire douce du soir, imaginée par les parents avec Sophie comme héroïne.",
       "content": "Sophie rampe sous un tas de neige. De la fumée s'échappe de la cabane en planche.\n\n— Le repas est servi chérie, viens vite ! dit sa mère par la fenêtre.\n\n— J'arrive !\n\nD'un bond élégant, la petite fille s'extrait de la masse blanche. Elle court jusqu'à l'entrée, pousse la porte usée puis passe devant l'âtre. Elle escalade ensuite le vieux banc pour se poser en face de son grand-père, très fière d'elle.\n\n— Qu'a donc découvert aujourd'hui ma fameuse exploratrice ? demanda-t-il.\n\n— Un ours blanc, trois phoques et une libellule.\n\n— Juste une ? s'enquit-il d'un air malicieux.\n\n— Oui, répondit-elle déçue, il me semble que la saison ne soit guère propice aux libellules Papi. Tu devrais le savoir, lâcha-t-elle en lançant un regard vers sa soupe.\n\n— Tu as parfaitement raison, je serais un piètre investisseur si, avant de financer une expédition, j'omettais de me renseigner sur les périodes d'apparition des libellules.\n\nCette phrase parut la contenter. Elle se tourna donc vers sa mère.\n\n— L'hiver est rude et nous avons peu mangé, quand le bouillon sera-t-il servi ?\n\n— Ta patience t'honore mon enfant, si tu regardes devant toi, peut-être me feras-tu le plaisir de goûter ce qui est déjà devant toi.\n\n— Tu comprends, je ne peux décemment pas négliger le ravitaillement de mon équipe, poursuivit-elle sans prêter la moindre attention à son bouillon.\n\nSoudain, un crépitement plus sonore que les précédents s'échappa de la cheminée. Sophie se retourna pour assister à la chose la plus étonnante qui puisse être donnée à une petite fille de l'hiver 1936.\n\nIl y avait là, au milieu des braises, un homme. Coiffé d'une chapka, emmitouflé dans une pelisse foncée, il avait un sourire amusé.\n\n— Tu arrives juste à temps, un peu plus et la soupe aurait été froide, dit-elle.\n\nAvançant d'un pas mal assuré vers le banc de Sophie, il tendit ses bras à son approche et lui ébouriffa les cheveux. Sophie soupira, contente, à sa gauche un petit bol de bouillon l'attendait déjà.\n\nFIN"
+    },
+    {
+      "title": "L'énigme de Nalchim",
+      "note": "Brouillon v1.5, inachevé — se termine sur l'énigme des pommes, sans résolution pour l'instant.",
+      "warning": "Met en scène Alice et Sophie chez leur grand-père, une figure autiste d'abord présentée comme inquiétante avant d'être révélée — à lire par un parent avant de partager.",
+      "content": "Papy ne devrait pas tarder. Ces mots, durs, résonnaient dans les deux petits cerveaux terrifiés du sous-sol de Nalchim, une semaine plus tôt. La nouvelle était tombée au milieu d'une partie de Shahr-i Sokhta, une variante du jeu d'Ur. Faiblement éclairée par le feu qui se mourait, leur mère avait pris un ton qui la réjouissait. Elle posait sa cuillère en équilibre sur une vieille tasse en porcelaine et déglutit son thé. Elle allait annoncer le pire désastre de leur vie, et pourtant elle semblait rayonner. Lui pardonneront-elles un jour ?\n\nElle expliqua très rapidement, et de manière un peu confuse, qu'il devait partir dès le lendemain pour une opportunité qu'il ne pouvait décidément pas rater. Leur père, sociologue, avait reçu une invitation à participer à un documentaire, sur un quelconque village, perdu quelque part, au-delà de… Les enfants les regardaient avec crainte. Peu importe les détails. Il partait ? Sans même demander leur avis ?\n\nAlice lança un regard perdu à Sophie, sa grande sœur de deux ans son aînée, mais elle ne semblait tout d'un coup plus rien ressentir. Elle regardait alternativement la théière au motif chinois et la fenêtre qui se protégeait d'un début de tempête de neige. Leur père, aux petites manières qu'on n'avait vues que dans des salles de classe, se taisait et souriait benoîtement en écoutant le virage que prenait sa carrière molle. Ensemble, ils évacuaient toute référence à leur vie de famille douillette. Leur mère, ponctuelle, son embardée professionnelle, faussement inquiète :\n« Il ne devrait pas tarder. »\n\nÀ 21h, il fallut se résoudre à aller se coucher. Néanmoins, papy viendrait comme prévu. Il avait simplement un peu de retard. Cette neige ne l'empêchait pas de venir. Il avait beau veiller tard, les deux « nouvelles orphelines » finirent par s'endormir aux alentours de minuit, et d'épuisement, elles dormirent jusqu'à 10h du matin.\n\nLeur sonnerie les poussa à sortir de leur couette en hâte, se précipitant au salon pour ouvrir à leur grand-père, prêtes à lui faire un câlin désespéré, mélangé de reproches qu'elles n'avaient pas pu entièrement adresser à leurs parents. Alice tendit la main pour saisir la poignée en laiton et l'agrippa avec un sourire fatigué, la boule de chaleur refroidie par la nuit.\n\nTournant la poignée, ses yeux se firent grands. Elle perdit son élan et se retrouva plaquée contre une masse marron, bien trop grande pour être leur grand-père. Ce dernier, bougon, prit la plaisanterie avec un œil vif. Monsieur Hench était tout le contraire.\n\nÀ environ 100 mètres de la sortie de la ville, se trouvait un modeste manoir appartenant à la famille Liana, qui venait de perdre la moitié de sa population, et l'autre, à un homme qui, grâce au ciel, ne sortait jamais de sa maison. Bien que son activité fût connue des enfants, Milan, ou Monsieur Hench comme on le disait, semait le doute. Son étiquette, abîmée sur la boîte aux lettres, n'indiquait qu'une occupation : changer de pièce en pièce, éteignant scrupuleusement chaque lumière. Ainsi, les filles, avec l'idée de Milan, suivirent le vieil homme inutilement dans sa maison, pièce après pièce. Leur vie semblait bien triste. Pourquoi ne sortait-il jamais ? Elles allaient bien vite comprendre…\n\nIl est autiste, et en fait c'est leur grand-père, trop timide pour se présenter comme tel. Il comprend tout sauf le mensonge. Parmi les énigmes qu'il pose aux filles, celle-ci les déroutera :\n\n« Je fais pousser un pommier aux pommes magnifiques au bord de mon terrain, et chaque année, quand elles sont prêtes à être cueillies, elles disparaissent dans la nuit. Aucune trace d'animaux. Comment expliquez-vous cela ? De plus, il y a de nombreux marcheurs qui passent par ce chemin en été, et je demande s'ils ont vu quelqu'un voler des pommes — chacun répond non. C'est le plus grand mystère de ma vie, car je n'ai jamais goûté une seule pomme. »"
     }
   ],
   "characterSheets": [
@@ -247,6 +227,34 @@
         }
       ],
       "portrait": "portraits/anatole.png"
+    },
+    {
+      "name": "Milan (Monsieur Hench)",
+      "role": "Le grand-père d'Alice et Sophie, dans « L'énigme de Nalchim »",
+      "portrait": "portraits/milan.png",
+      "traits": [
+        "Autiste, et trop timide pour se présenter comme le grand-père des enfants",
+        "Ne sort jamais de sa maison, y passe son temps à éteindre les lumières pièce après pièce",
+        "Comprend tout sauf le mensonge",
+        "Pose aux enfants des énigmes sincères, comme celle du pommier dont les pommes disparaissent chaque nuit"
+      ],
+      "examples": [
+        {
+          "quote": "Je fais pousser un pommier aux pommes magnifiques... chaque année... elles disparaissent dans la nuit. Aucune trace d'animaux. Comment expliquez-vous cela ?",
+          "source": "L'énigme de Nalchim"
+        }
+      ],
+      "flags": [
+        {
+          "text": "Contradiction dans le texte lui-même : à la porte, il est d'abord décrit comme « tout le contraire » du grand-père attendu, une masse effrayante — puis le texte révèle juste après qu'il s'agit bien du grand-père. À clarifier : est-ce le point de vue apeuré des filles qui se corrige, ou une incohérence à ajuster ?"
+        },
+        {
+          "text": "Point de vigilance d'écriture : le texte construit le suspense en rendant Milan inquiétant avant de révéler qu'il est autiste — à surveiller pour ne pas laisser entendre que l'autisme est ce qui le rend effrayant. Le mystère pourrait plutôt reposer sur ses énigmes et son mode de vie reclus, indépendamment de son autisme."
+        },
+        {
+          "text": "Ce grand-père (Milan) est un personnage distinct de Papy dans les autres textes de l'atelier — à confirmer si c'est le même grand-père sous un autre nom, ou un personnage propre à cette histoire."
+        }
+      ]
     }
   ],
   "architectureNotes": [
