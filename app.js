@@ -22,10 +22,6 @@ function renderStory(story) {
   return `<li><h3>${escapeHtml(story.title ?? "Sans titre")}</h3><p>${escapeHtml(story.summary ?? "")}</p></li>`;
 }
 
-function renderCharacter(character) {
-  return `<li><h3>${escapeHtml(character.name ?? "Sans nom")}</h3><p>${escapeHtml(character.description ?? "")}</p></li>`;
-}
-
 function renderIllustration(illustration) {
   const alt = illustration.title ?? "Illustration";
   return `<li><img src="${escapeHtml(illustration.src ?? "")}" alt="${escapeHtml(alt)}"><p>${escapeHtml(alt)}</p></li>`;
@@ -126,7 +122,6 @@ function initEveningStories(stories) {
 loadData()
   .then((data) => {
     renderList("stories-list", data.stories, renderStory);
-    renderList("characters-list", data.characters, renderCharacter);
     renderList("character-sheets-list", data.characterSheets, renderSheet);
     renderList("illustrations-list", data.illustrations, renderIllustration);
     initEveningStories(data.eveningStories);

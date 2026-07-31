@@ -1,6 +1,5 @@
 {
   "stories": [],
-  "characters": [],
   "illustrations": [
     {
       "title": "Alice (7 ans, à gauche), Clothilde (33 ans, au centre) et Sophie (9 ans, à droite)",
@@ -13,6 +12,18 @@
     {
       "title": "La Sorcière des Carpates",
       "src": "portraits/sorciere.png"
+    },
+    {
+      "title": "Benjamin",
+      "src": "portraits/benjamin.png"
+    },
+    {
+      "title": "Aurèle Berthomé (le boucher)",
+      "src": "portraits/boucher.png"
+    },
+    {
+      "title": "Anatole (le grand-père)",
+      "src": "portraits/anatole.png"
     }
   ],
   "eveningStories": [
@@ -183,7 +194,8 @@
         {
           "text": "Prénom confirmé par la famille (Benjamin). Traits de personnalité en partie déduits du texte, en partie fournis par la famille."
         }
-      ]
+      ],
+      "portrait": "portraits/benjamin.png"
     },
     {
       "name": "Aurèle Berthomé (le boucher)",
@@ -208,7 +220,8 @@
         {
           "text": "Personnage inventé pour combler un vide : le texte ne le nomme jamais, seulement « le boucher ». Le nom ci-dessus est une proposition, à valider ou modifier."
         }
-      ]
+      ],
+      "portrait": "portraits/boucher.png"
     },
     {
       "name": "Anatole (le grand-père)",
@@ -232,7 +245,8 @@
         {
           "text": "Sa façon d'apparaître (sorti des braises) laisse penser qu'il n'est peut-être pas un simple grand-père humain — un mystère volontairement non résolu par le texte."
         }
-      ]
+      ],
+      "portrait": "portraits/anatole.png"
     }
   ]
 }
