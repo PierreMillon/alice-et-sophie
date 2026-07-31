@@ -5,6 +5,14 @@
     {
       "title": "Alice, Sophie et Clothilde",
       "src": "portraits/famille.png"
+    },
+    {
+      "title": "Le Bossu d'Argueil",
+      "src": "portraits/bossu.png"
+    },
+    {
+      "title": "La Sorcière des Carpates",
+      "src": "portraits/sorciere.png"
     }
   ],
   "eveningStories": [
@@ -87,10 +95,11 @@
       "role": "La mère d'Alice et Sophie",
       "portrait": "portraits/clothilde.png",
       "traits": [
-        "Journaliste avec le père d'Alice et Sophie, toujours en quête d'un nouveau reportage ou d'un scoop",
+        "33 ans, journaliste indépendant(e) et écrivain(e)",
+        "S'est mis(e) en couple avec l'autre parent très jeune, au collège, et a eu ses filles rapidement — un duo très fusionnel",
+        "Cette fusion de couple a un revers : ils oublient facilement leurs filles en partant en reportage, un vrai fonctionnement toxique côté parentalité",
         "Enthousiaste et pleine d'idées : elle transforme les lieux visités en projets d'écriture pour ses filles (« Peut-être pourrions-nous les envoyer également au journal ? »)",
-        "A tendance à minimiser les mésaventures de ses filles à leur retour (« Vous voyez bien que ce n'était pas si grave... »)",
-        "Absente régulièrement pour le travail, ce qui pèse sur Alice et Sophie"
+        "A tendance à minimiser les mésaventures de ses filles à leur retour (« Vous voyez bien que ce n'était pas si grave... »)"
       ],
       "examples": [
         {
@@ -100,7 +109,7 @@
       ],
       "flags": [
         {
-          "text": "Peu de texte la concerne directement pour l'instant — plusieurs répliques sont attribuées aux « parents » sans distinguer clairement mère et père."
+          "text": "Personnalité inconsistante signalée par la famille : plutôt égocentrique/égoïste dans l'ensemble, mais avec des variations fortes — parfois perçue comme très aimante, parfois pas du tout. À garder en tête pour rester cohérent d'un texte à l'autre plutôt que d'en faire une personnalité lisse."
         }
       ]
     },
@@ -112,7 +121,8 @@
         "Prend son métier de guide très au sérieux malgré les moqueries, fait semblant de ne pas les remarquer",
         "Perçu avec beaucoup d'empathie par Alice et Sophie, qui trouvent injuste la façon dont on le traite",
         "Homme habillé tout en noir, grand mais penché en deux, regard perçant",
-        "Confirmé : ce n'est pas lui qui frappe à la porte à la fin de l'histoire — c'est le boucher."
+        "Confirmé : ce n'est pas lui qui frappe à la porte à la fin de l'histoire — c'est le boucher.",
+        "Alchimiste : les recherches préparatoires à l'histoire (grimoires, textes occultes) suggèrent qu'il s'adonne à l'alchimie — un pan de son personnage qui n'apparaît pas encore explicitement dans le texte publié"
       ],
       "examples": [
         {
@@ -124,7 +134,8 @@
           "source": "Le Bossu d'Argueil"
         }
       ],
-      "flags": []
+      "flags": [],
+      "portrait": "portraits/bossu.png"
     },
     {
       "name": "La Sorcière des Carpates (Mustrius)",
@@ -149,15 +160,17 @@
         {
           "text": "La Sophie citée parmi les enfants du village n'est pas « la vraie » Sophie de l'atelier : le texte prend la forme d'un conte raconté à voix haute (une voix s'adresse à l'enfant qui écoute, une « maman » interrompt), comme si Clothilde ou le père inventait cette histoire du soir pour Alice et Sophie en glissant son prénom parmi les enfants du récit — un clin d'œil, pas une apparition réelle."
         }
-      ]
+      ],
+      "portrait": "portraits/sorciere.png"
     },
     {
-      "name": "Fernand",
+      "name": "Benjamin",
       "role": "Le père d'Alice et Sophie",
       "traits": [
-        "Journaliste avec Clothilde, toujours en chasse d'un scoop ou d'une légende locale à raconter",
+        "33 ans, journaliste indépendant(e) et écrivain(e)",
+        "S'est mis(e) en couple avec l'autre parent très jeune, au collège, et a eu ses filles rapidement — un duo très fusionnel",
+        "Cette fusion de couple a un revers : ils oublient facilement leurs filles en partant en reportage, un vrai fonctionnement toxique côté parentalité",
         "Adore les curiosités du patrimoine (habitats troglodytes, tours gothiques, vieilles pierres) plus que le confort de ses filles",
-        "Bien intentionné mais distrait : il promet régulièrement de passer plus de temps en famille sans jamais vraiment s'y tenir",
         "Peine à croire pleinement les mésaventures de ses filles à leur retour"
       ],
       "examples": [
@@ -168,7 +181,7 @@
       ],
       "flags": [
         {
-          "text": "Personnage inventé pour combler un vide : le texte ne nomme jamais le père, seulement « leurs parents ». Le prénom et les traits ci-dessus sont une proposition, à valider ou modifier."
+          "text": "Prénom confirmé par la famille (Benjamin). Traits de personnalité en partie déduits du texte, en partie fournis par la famille."
         }
       ]
     },
