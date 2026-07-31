@@ -255,6 +255,23 @@
           "text": "Ce grand-père (Milan) est un personnage distinct de Papy dans les autres textes de l'atelier — à confirmer si c'est le même grand-père sous un autre nom, ou un personnage propre à cette histoire."
         }
       ]
+    },
+    {
+      "name": "Chifoufly",
+      "role": "Personnage hors narration — invoqué en fredonnant une chanson apprise aux filles dans leurs rêves",
+      "portrait": "portraits/chifoufly.png",
+      "traits": [
+        "Toujours l'exact opposé de la plus grande peur du moment d'Alice ou de Sophie — il change selon ce qu'il faut contrer",
+        "Deus ex machina : n'intervient que rarement, quand c'est vraiment nécessaire",
+        "Le reste du temps, complètement WTF et imprévisible — aucune logique à chercher dans son comportement",
+        "Existe en dehors des règles habituelles des histoires — un peu conscient d'être un raccourci narratif, dans l'esprit de Tom Bombadil"
+      ],
+      "examples": [],
+      "flags": [
+        {
+          "text": "N'est apparu dans aucune histoire publiée pour l'instant — personnage prêt à être utilisé dans un futur texte. Sa forme exacte (apparence, voix) reste à définir précisément selon la peur qu'il doit contrer à chaque apparition."
+        }
+      ]
     }
   ],
   "architectureNotes": [
