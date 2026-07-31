@@ -64,6 +64,14 @@ function renderSheet(sheet) {
   </li>`;
 }
 
+function renderArchitectureNote(note) {
+  return `<li class="architecture-card">
+    <h3>${escapeHtml(note.title ?? "Sans titre")}</h3>
+    ${note.rawNote ? `<p class="architecture-raw">${escapeHtml(note.rawNote)}</p>` : ""}
+    ${note.analysis ? `<p class="architecture-analysis"><strong>Logique extraite :</strong> ${escapeHtml(note.analysis)}</p>` : ""}
+  </li>`;
+}
+
 function initEveningStories(stories) {
   const container = document.getElementById("evening-stories-app");
 
@@ -124,6 +132,7 @@ loadData()
     renderList("stories-list", data.stories, renderStory);
     renderList("character-sheets-list", data.characterSheets, renderSheet);
     renderList("illustrations-list", data.illustrations, renderIllustration);
+    renderList("architecture-notes-list", data.architectureNotes, renderArchitectureNote);
     initEveningStories(data.eveningStories);
   })
   .catch((error) => {
