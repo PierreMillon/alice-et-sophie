@@ -17,7 +17,67 @@
     {
       "title": "Anomalie magnifique",
       "note": "Une histoire douce du soir, imaginée par les parents avec Sophie comme héroïne.",
-      "content": "Sophie rampe sous un tas de neige. De la fumée s'échappe de la cabane en planche.\n\n— Le repas est servi chérie, viens vite ! dit sa mère par la fenêtre.\n\n— J'arrive !\n\nD'un bond élégant, la petite fille s'extrait de la masse blanche. Elle court jusqu'à l'entrée, pousse la porte usée puis passe devant l'âtre. Elle escalade ensuite le vieux banc pour se poser en face de son grand-père, très fière d'elle.\n\n— Qu'a donc découvert aujourd'hui ma fameuse exploratrice ? demanda-t-il.\n\n— Un ours blanc, trois phoques et une libellule.\n\n— Juste une ? s'enquit-il d'un air malicieux.\n\n— Oui, répondit-elle déçue, il me semble que la saison ne soit guère propice aux libellules Papi. Tu devrais le savoir, lâcha-t-elle en lançant un regard vers sa soupe.\n\n— Tu as parfaitement raison, je serais un piètre investisseur si, avant de financer une expédition, j'omettais de me renseigner sur les périodes d'apparition des libellules.\n\nCette phrase parut la contenter. Elle se tourna donc vers sa mère.\n\n— L'hiver est rude et nous avons peu mangé, quand le bouillon sera-t-il servi ?\n\n— Ta patience t'honore mon enfant, si tu regardes devant toi, peut-être me feras-tu le plaisir de goûter ce qui est déjà devant toi.\n\n— Tu comprends, je ne peux décemment pas négliger le ravitaillement de mon équipe, poursuivit-elle sans prêter la moindre attention à son bouillon.\n\nSoudain, un crépitement plus sonore que les précédents s'échappa de la cheminée. Sophie se retourna pour assister à la chose la plus étonnante qui puisse être donnée à une petite fille de l'hiver 1942.\n\nIl y avait là, au milieu des braises, un homme. Coiffé d'une chapka, emmitouflé dans une pelisse foncée, il avait un sourire amusé.\n\n— Tu arrives juste à temps, un peu plus et la soupe aurait été froide, dit-elle.\n\nAvançant d'un pas mal assuré vers le banc de Sophie, il tendit ses bras à son approche et lui ébouriffa les cheveux. Sophie soupira, contente, à sa gauche un petit bol de bouillon l'attendait déjà.\n\nFIN"
+      "content": "Sophie rampe sous un tas de neige. De la fumée s'échappe de la cabane en planche.\n\n— Le repas est servi chérie, viens vite ! dit sa mère par la fenêtre.\n\n— J'arrive !\n\nD'un bond élégant, la petite fille s'extrait de la masse blanche. Elle court jusqu'à l'entrée, pousse la porte usée puis passe devant l'âtre. Elle escalade ensuite le vieux banc pour se poser en face de son grand-père, très fière d'elle.\n\n— Qu'a donc découvert aujourd'hui ma fameuse exploratrice ? demanda-t-il.\n\n— Un ours blanc, trois phoques et une libellule.\n\n— Juste une ? s'enquit-il d'un air malicieux.\n\n— Oui, répondit-elle déçue, il me semble que la saison ne soit guère propice aux libellules Papi. Tu devrais le savoir, lâcha-t-elle en lançant un regard vers sa soupe.\n\n— Tu as parfaitement raison, je serais un piètre investisseur si, avant de financer une expédition, j'omettais de me renseigner sur les périodes d'apparition des libellules.\n\nCette phrase parut la contenter. Elle se tourna donc vers sa mère.\n\n— L'hiver est rude et nous avons peu mangé, quand le bouillon sera-t-il servi ?\n\n— Ta patience t'honore mon enfant, si tu regardes devant toi, peut-être me feras-tu le plaisir de goûter ce qui est déjà devant toi.\n\n— Tu comprends, je ne peux décemment pas négliger le ravitaillement de mon équipe, poursuivit-elle sans prêter la moindre attention à son bouillon.\n\nSoudain, un crépitement plus sonore que les précédents s'échappa de la cheminée. Sophie se retourna pour assister à la chose la plus étonnante qui puisse être donnée à une petite fille de l'hiver 1942. [[flag: cette histoire se déroule en 1942, alors que « Le Bossu d'Argueil » se déroule en 1903 — voir la fiche personnage de Sophie pour la question de continuité.]]\n\nIl y avait là, au milieu des braises, un homme. Coiffé d'une chapka, emmitouflé dans une pelisse foncée, il avait un sourire amusé.\n\n— Tu arrives juste à temps, un peu plus et la soupe aurait été froide, dit-elle.\n\nAvançant d'un pas mal assuré vers le banc de Sophie, il tendit ses bras à son approche et lui ébouriffa les cheveux. Sophie soupira, contente, à sa gauche un petit bol de bouillon l'attendait déjà.\n\nFIN"
+    }
+  ],
+  "characterSheets": [
+    {
+      "name": "Alice",
+      "role": "La grande sœur, 13 ans — apparaît dans « Le Bossu d'Argueil »",
+      "traits": [
+        "Observatrice et perceptive : elle « sent » les choses avant même de les voir",
+        "Blasée par les absences répétées de ses parents, lucide sur leurs excuses",
+        "Protectrice envers Sophie : elle sait lâcher une petite victoire pour la laisser profiter d'un moment de joie",
+        "Anxieuse face à l'atmosphère d'un lieu, avant même qu'un danger concret n'apparaisse"
+      ],
+      "examples": [
+        {
+          "quote": "Alice avait tout écouté, blasée. C'était toujours la même histoire : leurs parents étaient à la recherche de scoops...",
+          "source": "Le Bossu d'Argueil"
+        },
+        {
+          "quote": "elle s'était résignée à la laisser profiter un instant de plus des rares moments de joie dont elles bénéficiaient",
+          "source": "Le Bossu d'Argueil"
+        },
+        {
+          "quote": "ce village inquiétait Alice... elle ressentait cette émotion de tristesse, saisie au cœur",
+          "source": "Le Bossu d'Argueil"
+        }
+      ],
+      "flags": [
+        {
+          "text": "Alice n'apparaît pour l'instant que dans un seul texte — sa fiche s'enrichira quand d'autres histoires la mettront en scène."
+        }
+      ]
+    },
+    {
+      "name": "Sophie",
+      "role": "La petite sœur — apparaît dans plusieurs textes, à des âges et dans des contextes très différents",
+      "traits": [
+        "Dans « Le Bossu d'Argueil » (1903, 9 ans) : impulsive et compétitive, rapide à agir sans trop réfléchir",
+        "Dans « Le Bossu d'Argueil » : prompte à la colère face à l'abandon de ses parents, mais aussi curieuse et sensible à l'injustice (elle proteste contre les moqueries visant le bossu)",
+        "Dans « Anomalie magnifique » (hiver 1942) : douce, joueuse, imaginative — se rêve exploratrice, chamaille gentiment son grand-père",
+        "Dans « Anomalie magnifique » : entourée et choyée, à l'opposé du sentiment d'abandon ressenti dans « Le Bossu d'Argueil »"
+      ],
+      "examples": [
+        {
+          "quote": "Elle sentit son sang bouillir. Et quand sa mère ouvrit la bouche, elle tenta de se forcer à rester silencieuse quelques secondes, puis s'enfuit",
+          "source": "Le Bossu d'Argueil"
+        },
+        {
+          "quote": "Sophie ne dit rien et partit fêter sa victoire en dévalant les escaliers pour atterrir en trombe dans la cuisine",
+          "source": "Le Bossu d'Argueil"
+        },
+        {
+          "quote": "Tu comprends, je ne peux décemment pas négliger le ravitaillement de mon équipe, poursuivit-elle sans prêter la moindre attention à son bouillon",
+          "source": "Anomalie magnifique"
+        }
+      ],
+      "flags": [
+        {
+          "text": "Contradiction potentielle : « Le Bossu d'Argueil » se déroule en 1903 avec des parents journalistes souvent absents, tandis qu'« Anomalie magnifique » se déroule en hiver 1942 avec un grand-père très présent. Les deux Sophie ont des personnalités assez différentes (impulsive/en colère vs douce/joueuse). À clarifier : familles et époques distinctes assumées, ou continuité à ajuster ?"
+        }
+      ]
     }
   ]
 }
