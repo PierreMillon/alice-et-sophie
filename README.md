@@ -26,3 +26,5 @@ Puis visiter `http://localhost:8000`.
 ## Publication (GitHub Pages)
 
 Dans les paramètres du dépôt GitHub : **Settings > Pages**, choisir la branche `main` et le dossier `/ (root)`, puis enregistrer.
+
+Site en ligne : https://pierremillon.github.io/alice-et-sophie/
