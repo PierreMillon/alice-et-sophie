@@ -13,6 +13,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: "Segoe UI", Verdana, sans-serif;
@@ -43,6 +48,8 @@ body {
   font-size: clamp(2.75rem, 14vw, 5rem);
   line-height: 1.15;
   color: var(--color-black);
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .tagline {
@@ -61,12 +68,21 @@ body {
   box-shadow: 0 2px 4px rgba(22, 18, 19, 0.12);
 }
 
+@media (max-width: 640px) {
+  .site-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem 1rem;
+  }
+}
+
 .site-nav a {
   color: var(--color-black);
   text-decoration: none;
   font-weight: 600;
   padding-bottom: 0.2rem;
   border-bottom: 2px solid transparent;
+  text-align: center;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
