@@ -50,10 +50,18 @@ function renderSheet(sheet) {
   const flags = (sheet.flags ?? [])
     .map((flag) => `<p class="sheet-flag">⚠️ ${escapeHtml(flag.text ?? "")}</p>`)
     .join("");
+  const portrait = sheet.portrait
+    ? `<img class="sheet-portrait" src="${escapeHtml(sheet.portrait)}" alt="Portrait de ${escapeHtml(sheet.name ?? "")}">`
+    : "";
 
   return `<li class="sheet-card">
-    <h3>${escapeHtml(sheet.name ?? "Sans nom")}</h3>
-    ${sheet.role ? `<p class="sheet-role">${escapeHtml(sheet.role)}</p>` : ""}
+    <div class="sheet-header">
+      ${portrait}
+      <div>
+        <h3>${escapeHtml(sheet.name ?? "Sans nom")}</h3>
+        ${sheet.role ? `<p class="sheet-role">${escapeHtml(sheet.role)}</p>` : ""}
+      </div>
+    </div>
     ${traits ? `<ul class="sheet-traits">${traits}</ul>` : ""}
     ${examples ? `<ul class="sheet-examples">${examples}</ul>` : ""}
     ${flags ? `<div class="sheet-flags">${flags}</div>` : ""}

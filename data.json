@@ -23,7 +23,7 @@
   "characterSheets": [
     {
       "name": "Alice",
-      "role": "La grande sœur, 13 ans — apparaît dans « Le Bossu d'Argueil »",
+      "role": "7 ans — naïve, un peu tête en l'air, un brin garçon manqué (description de référence de la famille)",
       "traits": [
         "Observatrice et perceptive : elle « sent » les choses avant même de les voir",
         "Blasée par les absences répétées de ses parents, lucide sur leurs excuses",
@@ -46,13 +46,14 @@
       ],
       "flags": [
         {
-          "text": "Alice n'apparaît pour l'instant que dans un seul texte — sa fiche s'enrichira quand d'autres histoires la mettront en scène."
+          "text": "Contradiction avec « Le Bossu d'Argueil » : la description de référence présente Alice comme la petite sœur de 7 ans, alors que dans ce texte elle est la grande sœur de 13 ans. L'âge et l'ordre de naissance sont à harmoniser."
         }
-      ]
+      ],
+      "portrait": "portraits/alice.png"
     },
     {
       "name": "Sophie",
-      "role": "La petite sœur — apparaît dans plusieurs textes, à des âges et dans des contextes très différents",
+      "role": "9 ans — prudente et réfléchie (description de référence de la famille)",
       "traits": [
         "Dans « Le Bossu d'Argueil » (1925, 9 ans) : impulsive et compétitive, rapide à agir sans trop réfléchir",
         "Dans « Le Bossu d'Argueil » : prompte à la colère face à l'abandon de ses parents, mais aussi curieuse et sensible à l'injustice (elle proteste contre les moqueries visant le bossu)",
@@ -77,7 +78,8 @@
         {
           "text": "Les deux histoires ont été recalées sur l'entre-deux-guerres (1925 et 1936) pour rester dans une chronologie cohérente. Le contraste de personnalité (impulsive/en colère vs douce/joueuse) reste à surveiller si le personnage doit rester cohérent d'un texte à l'autre."
         }
-      ]
+      ],
+      "portrait": "portraits/sophie.png"
     }
   ]
 }
