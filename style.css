@@ -339,6 +339,55 @@ section h2 {
   margin: 0 0 0.5rem;
 }
 
+.architecture-section {
+  background-color: #fff2ea;
+  padding: 2.5rem 1rem;
+  border-top: 4px dashed var(--color-black);
+  border-bottom: 4px dashed var(--color-black);
+}
+
+.architecture-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.architecture-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.architecture-card {
+  background-color: var(--color-card-bg);
+  border-radius: 8px;
+  border: 2px dashed var(--color-black);
+  padding: 1.25rem 1.5rem;
+}
+
+.architecture-card h3 {
+  margin: 0 0 0.5rem;
+  color: var(--color-black);
+  font-size: 1.15rem;
+}
+
+.architecture-raw {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem;
+}
+
+.architecture-analysis {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.architecture-analysis strong {
+  color: var(--color-green);
+}
+
 .site-footer {
   text-align: center;
   padding: 1.5rem;

@@ -22,10 +22,6 @@ function renderStory(story) {
   return `<li><h3>${escapeHtml(story.title ?? "Sans titre")}</h3><p>${escapeHtml(story.summary ?? "")}</p></li>`;
 }
 
-function renderCharacter(character) {
-  return `<li><h3>${escapeHtml(character.name ?? "Sans nom")}</h3><p>${escapeHtml(character.description ?? "")}</p></li>`;
-}
-
 function renderIllustration(illustration) {
   const alt = illustration.title ?? "Illustration";
   return `<li><img src="${escapeHtml(illustration.src ?? "")}" alt="${escapeHtml(alt)}"><p>${escapeHtml(alt)}</p></li>`;
@@ -65,6 +61,14 @@ function renderSheet(sheet) {
     ${traits ? `<ul class="sheet-traits">${traits}</ul>` : ""}
     ${examples ? `<ul class="sheet-examples">${examples}</ul>` : ""}
     ${flags ? `<div class="sheet-flags">${flags}</div>` : ""}
+  </li>`;
+}
+
+function renderArchitectureNote(note) {
+  return `<li class="architecture-card">
+    <h3>${escapeHtml(note.title ?? "Sans titre")}</h3>
+    ${note.rawNote ? `<p class="architecture-raw">${escapeHtml(note.rawNote)}</p>` : ""}
+    ${note.analysis ? `<p class="architecture-analysis"><strong>Logique extraite :</strong> ${escapeHtml(note.analysis)}</p>` : ""}
   </li>`;
 }
 
@@ -126,9 +130,9 @@ function initEveningStories(stories) {
 loadData()
   .then((data) => {
     renderList("stories-list", data.stories, renderStory);
-    renderList("characters-list", data.characters, renderCharacter);
     renderList("character-sheets-list", data.characterSheets, renderSheet);
     renderList("illustrations-list", data.illustrations, renderIllustration);
+    renderList("architecture-notes-list", data.architectureNotes, renderArchitectureNote);
     initEveningStories(data.eveningStories);
   })
   .catch((error) => {
