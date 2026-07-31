@@ -1,7 +1,12 @@
 {
   "stories": [],
   "characters": [],
-  "illustrations": [],
+  "illustrations": [
+    {
+      "title": "Alice, Sophie et Clothilde",
+      "src": "portraits/famille.png"
+    }
+  ],
   "eveningStories": [
     {
       "title": "Le Bossu d'Argueil",
@@ -142,7 +147,77 @@
       ],
       "flags": [
         {
-          "text": "Un personnage nommé Sophie apparaît parmi les enfants du village (« Sophie possède une poudre qui... »), sans lien confirmé avec l'Alice et Sophie du reste de l'atelier — probablement un homonyme dans cette histoire distincte, à confirmer."
+          "text": "La Sophie citée parmi les enfants du village n'est pas « la vraie » Sophie de l'atelier : le texte prend la forme d'un conte raconté à voix haute (une voix s'adresse à l'enfant qui écoute, une « maman » interrompt), comme si Clothilde ou le père inventait cette histoire du soir pour Alice et Sophie en glissant son prénom parmi les enfants du récit — un clin d'œil, pas une apparition réelle."
+        }
+      ]
+    },
+    {
+      "name": "Fernand",
+      "role": "Le père d'Alice et Sophie",
+      "traits": [
+        "Journaliste avec Clothilde, toujours en chasse d'un scoop ou d'une légende locale à raconter",
+        "Adore les curiosités du patrimoine (habitats troglodytes, tours gothiques, vieilles pierres) plus que le confort de ses filles",
+        "Bien intentionné mais distrait : il promet régulièrement de passer plus de temps en famille sans jamais vraiment s'y tenir",
+        "Peine à croire pleinement les mésaventures de ses filles à leur retour"
+      ],
+      "examples": [
+        {
+          "quote": "Ils allaient bien sûr l'interroger, faire quelques croquis pour envoyer un bel article à leur journal",
+          "source": "Le Bossu d'Argueil"
+        }
+      ],
+      "flags": [
+        {
+          "text": "Personnage inventé pour combler un vide : le texte ne nomme jamais le père, seulement « leurs parents ». Le prénom et les traits ci-dessus sont une proposition, à valider ou modifier."
+        }
+      ]
+    },
+    {
+      "name": "Aurèle Berthomé (le boucher)",
+      "role": "Le boucher d'Argueil, propriétaire de l'appartement loué par la famille",
+      "traits": [
+        "Apparence froide, yeux noirs, corps musclé, allure autoritaire",
+        "Façade affable et souriante en public, qui se fissure dès qu'il se croit seul",
+        "Exploite commercialement la difformité du bossu pour attirer une clientèle curieuse et oisive",
+        "Confirmé comme l'homme qui frappe et menace les filles à la fin de l'histoire — le véritable antagoniste"
+      ],
+      "examples": [
+        {
+          "quote": "quand il pensait ne pas être regardé, le boucher relâchait ses muscles faciaux et c'était une toute autre personnalité qui voyait le jour... comme s'il était possédé par un ours",
+          "source": "Le Bossu d'Argueil"
+        },
+        {
+          "quote": "Je t'avais prévenu que la vie n'attendait pas.",
+          "source": "Le Bossu d'Argueil"
+        }
+      ],
+      "flags": [
+        {
+          "text": "Personnage inventé pour combler un vide : le texte ne le nomme jamais, seulement « le boucher ». Le nom ci-dessus est une proposition, à valider ou modifier."
+        }
+      ]
+    },
+    {
+      "name": "Anatole (le grand-père)",
+      "role": "Le grand-père de Sophie dans « Anomalie magnifique »",
+      "traits": [
+        "Apparaît littéralement au milieu des braises de la cheminée, coiffé d'une chapka — une arrivée qui n'a rien d'ordinaire",
+        "Malicieux et taquin avec Sophie, entre dans son jeu d'exploratrice sans se moquer",
+        "Patient et présent, à l'opposé du sentiment d'abandon que vivent les filles dans « Le Bossu d'Argueil »",
+        "Tendre : il ébouriffe les cheveux de Sophie et la laisse profiter de son bouillon"
+      ],
+      "examples": [
+        {
+          "quote": "il y avait là, au milieu des braises, un homme. Coiffé d'une chapka, emmitouflé dans une pelisse foncée, il avait un sourire amusé",
+          "source": "Anomalie magnifique"
+        }
+      ],
+      "flags": [
+        {
+          "text": "Personnage inventé pour combler un vide : le texte ne le nomme jamais, seulement « Papi »/« grand-père ». Le prénom ci-dessus est une proposition, à valider ou modifier."
+        },
+        {
+          "text": "Sa façon d'apparaître (sorti des braises) laisse penser qu'il n'est peut-être pas un simple grand-père humain — un mystère volontairement non résolu par le texte."
         }
       ]
     }
