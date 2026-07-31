@@ -22,11 +22,6 @@ function renderStory(story) {
   return `<li><h3>${escapeHtml(story.title ?? "Sans titre")}</h3><p>${escapeHtml(story.summary ?? "")}</p></li>`;
 }
 
-function renderIllustration(illustration) {
-  const alt = illustration.title ?? "Illustration";
-  return `<li><img src="${escapeHtml(illustration.src ?? "")}" alt="${escapeHtml(alt)}"><p>${escapeHtml(alt)}</p></li>`;
-}
-
 function withInlineFlags(escapedText) {
   return escapedText.replace(/\[\[flag:(.*?)\]\]/g, '<span class="text-flag">⚠️ $1</span>');
 }
@@ -38,38 +33,86 @@ function renderParagraphs(content) {
     .join("");
 }
 
-function renderSheet(sheet) {
-  const traits = (sheet.traits ?? []).map((trait) => `<li>${escapeHtml(trait)}</li>`).join("");
-  const examples = (sheet.examples ?? [])
-    .map((example) => `<li>« ${escapeHtml(example.quote ?? "")} »<cite>${escapeHtml(example.source ?? "")}</cite></li>`)
-    .join("");
-  const flags = (sheet.flags ?? [])
-    .map((flag) => `<p class="sheet-flag">⚠️ ${escapeHtml(flag.text ?? "")}</p>`)
-    .join("");
-  const portrait = sheet.portrait
-    ? `<img class="sheet-portrait" src="${escapeHtml(sheet.portrait)}" alt="Portrait de ${escapeHtml(sheet.name ?? "")}">`
-    : "";
-
-  return `<li class="sheet-card">
-    <div class="sheet-header">
-      ${portrait}
-      <div>
-        <h3>${escapeHtml(sheet.name ?? "Sans nom")}</h3>
-        ${sheet.role ? `<p class="sheet-role">${escapeHtml(sheet.role)}</p>` : ""}
-      </div>
-    </div>
-    ${traits ? `<ul class="sheet-traits">${traits}</ul>` : ""}
-    ${examples ? `<ul class="sheet-examples">${examples}</ul>` : ""}
-    ${flags ? `<div class="sheet-flags">${flags}</div>` : ""}
-  </li>`;
-}
-
 function renderArchitectureNote(note) {
   return `<li class="architecture-card">
     <h3>${escapeHtml(note.title ?? "Sans titre")}</h3>
     ${note.rawNote ? `<p class="architecture-raw">${escapeHtml(note.rawNote)}</p>` : ""}
     ${note.analysis ? `<p class="architecture-analysis"><strong>Logique extraite :</strong> ${escapeHtml(note.analysis)}</p>` : ""}
   </li>`;
+}
+
+function initCharacterSheets(sheets) {
+  const container = document.getElementById("character-sheets-app");
+
+  if (!sheets || sheets.length === 0) {
+    container.innerHTML = '<p class="empty-state">Rien à afficher pour le moment.</p>';
+    return;
+  }
+
+  function portraitImg(sheet, className) {
+    return sheet.portrait
+      ? `<img class="${className}" src="${escapeHtml(sheet.portrait)}" alt="Portrait de ${escapeHtml(sheet.name ?? "")}">`
+      : "";
+  }
+
+  function showList() {
+    container.innerHTML = `<ul class="sheet-list">${sheets
+      .map((sheet, index) => `
+        <li class="sheet-preview" data-index="${index}">
+          ${portraitImg(sheet, "sheet-preview-portrait")}
+          <h3>${escapeHtml(sheet.name ?? "Sans nom")}</h3>
+          ${sheet.role ? `<p class="sheet-role">${escapeHtml(sheet.role)}</p>` : ""}
+        </li>`)
+      .join("")}</ul>`;
+
+    container.querySelectorAll(".sheet-preview").forEach((el) => {
+      el.addEventListener("click", () => {
+        window.location.hash = `sheet-${el.dataset.index}`;
+      });
+    });
+  }
+
+  function showDetail(index) {
+    const sheet = sheets[index];
+    if (!sheet) {
+      showList();
+      return;
+    }
+    const traits = (sheet.traits ?? []).map((trait) => `<li>${escapeHtml(trait)}</li>`).join("");
+    const examples = (sheet.examples ?? [])
+      .map((example) => `<li>« ${escapeHtml(example.quote ?? "")} »<cite>${escapeHtml(example.source ?? "")}</cite></li>`)
+      .join("");
+    const flags = (sheet.flags ?? [])
+      .map((flag) => `<p class="sheet-flag">⚠️ ${escapeHtml(flag.text ?? "")}</p>`)
+      .join("");
+
+    container.innerHTML = `
+      <div class="sheet-detail">
+        <a href="#character-sheets" class="evening-back">← Retour aux personnages</a>
+        <div class="sheet-header">
+          ${portraitImg(sheet, "sheet-portrait")}
+          <div>
+            <h3>${escapeHtml(sheet.name ?? "Sans nom")}</h3>
+            ${sheet.role ? `<p class="sheet-role">${escapeHtml(sheet.role)}</p>` : ""}
+          </div>
+        </div>
+        ${traits ? `<ul class="sheet-traits">${traits}</ul>` : ""}
+        ${examples ? `<ul class="sheet-examples">${examples}</ul>` : ""}
+        ${flags ? `<div class="sheet-flags">${flags}</div>` : ""}
+      </div>`;
+  }
+
+  function route() {
+    const match = window.location.hash.match(/^#sheet-(\d+)$/);
+    if (match) {
+      showDetail(Number(match[1]));
+    } else {
+      showList();
+    }
+  }
+
+  window.addEventListener("hashchange", route);
+  route();
 }
 
 function initEveningStories(stories) {
@@ -130,8 +173,7 @@ function initEveningStories(stories) {
 loadData()
   .then((data) => {
     renderList("stories-list", data.stories, renderStory);
-    renderList("character-sheets-list", data.characterSheets, renderSheet);
-    renderList("illustrations-list", data.illustrations, renderIllustration);
+    initCharacterSheets(data.characterSheets);
     renderList("architecture-notes-list", data.architectureNotes, renderArchitectureNote);
     initEveningStories(data.eveningStories);
   })
