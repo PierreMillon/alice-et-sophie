@@ -106,7 +106,8 @@
         "Marqué par une difformité physique (dos voûté), moqué et pris en pitié par les touristes",
         "Prend son métier de guide très au sérieux malgré les moqueries, fait semblant de ne pas les remarquer",
         "Perçu avec beaucoup d'empathie par Alice et Sophie, qui trouvent injuste la façon dont on le traite",
-        "Homme habillé tout en noir, grand mais penché en deux, regard perçant"
+        "Homme habillé tout en noir, grand mais penché en deux, regard perçant",
+        "Confirmé : ce n'est pas lui qui frappe à la porte à la fin de l'histoire — c'est le boucher."
       ],
       "examples": [
         {
@@ -118,11 +119,7 @@
           "source": "Le Bossu d'Argueil"
         }
       ],
-      "flags": [
-        {
-          "text": "Ambiguïté à clarifier : à la fin du texte, un homme frappe violemment à la porte et menace les filles (« Je t'avais prévenu que la vie n'attendait pas »). Le texte ne dit pas explicitement s'il s'agit du bossu ou du boucher — les deux sont décrits juste avant comme ayant une face cachée. À trancher pour la suite de l'histoire."
-        }
-      ]
+      "flags": []
     },
     {
       "name": "La Sorcière des Carpates (Mustrius)",
