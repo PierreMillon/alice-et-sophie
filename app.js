@@ -431,6 +431,16 @@ function initSidebar(stories) {
   sidebar.querySelectorAll("a").forEach((a) => {
     a.addEventListener("click", closeSidebar);
   });
+
+  sidebar.querySelectorAll(".sidebar-item-toggle").forEach((toggle) => {
+    const sublist = toggle.closest(".sidebar-item")?.nextElementSibling;
+    if (!sublist || !sublist.classList.contains("sidebar-sublist")) return;
+    toggle.addEventListener("click", () => {
+      const isOpen = sublist.classList.toggle("is-open");
+      toggle.classList.toggle("is-open", isOpen);
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+  });
 }
 
 loadData()
