@@ -600,12 +600,18 @@ section h2 {
   stroke: var(--color-green);
 }
 
+.tension-rythme {
+  stroke: var(--color-black);
+  stroke-dasharray: 4 3;
+}
+
 .tension-legend {
   margin-top: 0.5rem;
   font-size: 0.75rem;
   color: var(--color-muted);
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.35rem;
 }
 
@@ -620,6 +626,22 @@ section h2 {
 .legend-dot.tension-peur { background-color: var(--color-red); }
 .legend-dot.tension-surprise { background-color: var(--color-orange); margin-left: 0.6rem; }
 .legend-dot.tension-nouveaute { background-color: var(--color-green); margin-left: 0.6rem; }
+.legend-dot.tension-rythme { background-color: var(--color-black); margin-left: 0.6rem; }
+
+.tension-cliffhanger {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  color: var(--color-black);
+}
+
+.tension-avis {
+  margin: 0.5rem 0 0;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--color-muted);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--color-text);
+}
 
 .site-footer {
   text-align: center;
