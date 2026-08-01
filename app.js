@@ -55,6 +55,17 @@ function renderStructureNote(note) {
   </li>`;
 }
 
+function checklistLegend(groups) {
+  return (groups ?? [])
+    .map(
+      (g) => `<p class="checklist-legend-item">
+        <span class="legend-dot checklist-group-${g.key}"></span>
+        <strong>${escapeHtml(g.title)}</strong> — ${escapeHtml(g.source)}
+      </p>`
+    )
+    .join("");
+}
+
 function renderSeriesChecklist(checklist) {
   const container = document.getElementById("series-checklist-app");
   if (!checklist || !checklist.rows || checklist.rows.length === 0) {
@@ -62,40 +73,64 @@ function renderSeriesChecklist(checklist) {
     return;
   }
 
-  const groups = checklist.groups && checklist.groups.length
-    ? checklist.groups
-    : [{ key: null, title: "", source: "" }];
+  let prevGroup = null;
+  const headerCells = checklist.criteria
+    .map((c) => {
+      const groupStart = c.group !== prevGroup;
+      prevGroup = c.group;
+      return `<th class="checklist-group-${c.group}${groupStart ? " group-start" : ""}">${escapeHtml(c.label)}</th>`;
+    })
+    .join("");
 
-  const tables = groups
-    .map((group) => {
-      const groupCriteria = checklist.criteria.filter((c) => (group.key ? c.group === group.key : true));
-      if (groupCriteria.length === 0) return "";
-
-      const headerCells = groupCriteria.map((c) => `<th>${escapeHtml(c.label)}</th>`).join("");
-      const rows = checklist.rows
-        .map((row) => {
-          const cells = groupCriteria
-            .map((c) => `<td class="${row.checks[c.key] ? "check-yes" : "check-no"}">${row.checks[c.key] ? "✓" : "—"}</td>`)
-            .join("");
-          return `<tr><th scope="row">${escapeHtml(row.story)}</th>${cells}</tr>`;
+  const rows = checklist.rows
+    .map((row) => {
+      let prev = null;
+      const cells = checklist.criteria
+        .map((c) => {
+          const groupStart = c.group !== prev;
+          prev = c.group;
+          const pass = row.checks[c.key];
+          return `<td class="${pass ? "check-yes" : "check-no"}${groupStart ? " group-start" : ""}">${pass ? "✓" : "—"}</td>`;
         })
         .join("");
-
-      return `
-        ${group.title ? `<h4 class="checklist-group-title">${escapeHtml(group.title)}</h4>` : ""}
-        ${group.source ? `<p class="checklist-group-source">Source : ${escapeHtml(group.source)}</p>` : ""}
-        <div class="checklist-scroll">
-          <table class="checklist-table">
-            <thead><tr><th scope="col"></th>${headerCells}</tr></thead>
-            <tbody>${rows}</tbody>
-          </table>
-        </div>`;
+      return `<tr><th scope="row">${escapeHtml(row.story)}</th>${cells}</tr>`;
     })
     .join("");
 
   container.innerHTML = `
     ${checklist.intro ? `<p class="section-intro">${escapeHtml(checklist.intro)}</p>` : ""}
-    ${tables}`;
+    <div class="checklist-legend">${checklistLegend(checklist.groups)}</div>
+    <div class="checklist-scroll">
+      <table class="checklist-table">
+        <thead><tr><th scope="col"></th>${headerCells}</tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+}
+
+function storyChecklistFor(item, checklist) {
+  if (!checklist || !checklist.rows) return "";
+  const row = checklist.rows.find((r) => r.story === item.title);
+  if (!row) return "";
+
+  const chips = checklist.criteria
+    .map((c) => {
+      const pass = Boolean(row.checks[c.key]);
+      return `<span class="chip chip-group-${c.group} ${pass ? "chip-yes" : "chip-no"}">${pass ? "✓" : "–"} ${escapeHtml(c.label)}</span>`;
+    })
+    .join("");
+
+  const legend = (checklist.groups ?? [])
+    .map(
+      (g) => `<span class="chip-legend-item"><span class="legend-dot checklist-group-${g.key}"></span>${escapeHtml(g.title)}</span>`
+    )
+    .join("");
+
+  return `<div class="story-checklist">
+    <p class="story-checklist-title">Checklist de structure</p>
+    <div class="chip-list">${chips}</div>
+    <div class="chip-legend">${legend}</div>
+  </div>`;
 }
 
 function comfortArc(peur, maxVal) {
@@ -257,13 +292,15 @@ function initCharacterSheets(sheets, storyCollections) {
   }
 
   function route(isNavigation) {
-    const match = window.location.hash.match(/^#sheet-(\d+)$/);
+    const hash = window.location.hash;
+    const match = hash.match(/^#sheet-(\d+)$/);
     if (match) {
       showDetail(Number(match[1]));
     } else {
       showList();
     }
-    if (isNavigation) {
+    const owns = Boolean(match) || hash === "#character-sheets";
+    if (isNavigation && owns) {
       scrollSectionIntoView(container);
     }
   }
@@ -273,7 +310,7 @@ function initCharacterSheets(sheets, storyCollections) {
 }
 
 function initTextCollection(containerId, items, options) {
-  const { hashPrefix, sectionHash, backLabel, characterSheets, tensionCurves } = options;
+  const { hashPrefix, sectionHash, backLabel, characterSheets, tensionCurves, seriesChecklist } = options;
   const container = document.getElementById(containerId);
 
   function tensionChartFor(item) {
@@ -332,25 +369,68 @@ function initTextCollection(containerId, items, options) {
         ${item.note ? `<p class="evening-note">${escapeHtml(item.note)}</p>` : ""}
         ${item.warning ? `<p class="evening-warning">⚠️ ${escapeHtml(item.warning)}</p>` : ""}
         ${tensionChartFor(item)}
+        ${storyChecklistFor(item, seriesChecklist)}
         <div class="evening-content">${renderParagraphs(item.content)}</div>
         ${characterLinks(item)}
       </div>`;
   }
 
   function route(isNavigation) {
-    const match = window.location.hash.match(new RegExp(`^#${hashPrefix}-(\\d+)$`));
+    const hash = window.location.hash;
+    const match = hash.match(new RegExp(`^#${hashPrefix}-(\\d+)$`));
     if (match) {
       showDetail(Number(match[1]));
     } else {
       showList();
     }
-    if (isNavigation) {
+    const owns = Boolean(match) || hash === `#${sectionHash}`;
+    if (isNavigation && owns) {
       scrollSectionIntoView(container);
     }
   }
 
   window.addEventListener("hashchange", () => route(true));
   route(false);
+}
+
+function initSidebar(stories) {
+  const toggle = document.getElementById("sidebar-toggle");
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("sidebar-overlay");
+  const closeBtn = document.getElementById("sidebar-close");
+  if (!toggle || !sidebar || !overlay || !closeBtn) return;
+
+  function openSidebar() {
+    sidebar.classList.add("is-open");
+    overlay.classList.add("is-open");
+    sidebar.setAttribute("aria-hidden", "false");
+    toggle.setAttribute("aria-expanded", "true");
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove("is-open");
+    overlay.classList.remove("is-open");
+    sidebar.setAttribute("aria-hidden", "true");
+    toggle.setAttribute("aria-expanded", "false");
+  }
+
+  toggle.addEventListener("click", openSidebar);
+  closeBtn.addEventListener("click", closeSidebar);
+  overlay.addEventListener("click", closeSidebar);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeSidebar();
+  });
+
+  const list = document.getElementById("sidebar-stories-list");
+  if (list && stories && stories.length) {
+    list.innerHTML = stories
+      .map((story, index) => `<li><a href="#story-${index}">${escapeHtml(story.title ?? "Sans titre")}</a></li>`)
+      .join("");
+  }
+
+  sidebar.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", closeSidebar);
+  });
 }
 
 loadData()
@@ -361,6 +441,7 @@ loadData()
       backLabel: "Retour aux histoires",
       characterSheets: data.characterSheets,
       tensionCurves: data.tensionCurves,
+      seriesChecklist: data.seriesChecklist,
     });
     initCharacterSheets(data.characterSheets, [
       { items: data.stories, hashPrefix: "story" },
@@ -371,6 +452,7 @@ loadData()
     document.getElementById("tension-charts-app").innerHTML = (data.tensionCurves ?? [])
       .map((c) => renderTensionChart(c, { showTitle: true, showAvis: true }))
       .join("");
+    initSidebar(data.stories);
   })
   .catch((error) => {
     console.error("Impossible de charger data.json :", error);
