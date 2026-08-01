@@ -82,6 +82,22 @@ function renderSeriesChecklist(checklist) {
     </div>`;
 }
 
+function comfortArc(peur, maxVal) {
+  return peur.map((v) => maxVal - v);
+}
+
+function scoreComfortArc(peur) {
+  const n = peur.length;
+  if (n < 4) return null;
+  const checks = [
+    { label: "Confort au début", pass: peur[0] <= 2 },
+    { label: "Montée progressive dans l'étrange", pass: peur[Math.floor(n / 2)] >= peur[0] },
+    { label: "Creux (répit) avant la fin", pass: peur[n - 2] < peur[n - 3] },
+    { label: "Remontée subite à la toute fin", pass: peur[n - 1] > peur[n - 2] + 1 },
+  ];
+  return { score: checks.filter((c) => c.pass).length, total: checks.length, checks };
+}
+
 function renderTensionChart(curve, options) {
   const { showTitle = true, showAvis = true } = options ?? {};
   const w = 280;
@@ -93,21 +109,30 @@ function renderTensionChart(curve, options) {
     { key: "surprise", cls: "tension-surprise" },
     { key: "nouveaute", cls: "tension-nouveaute" },
     { key: "rythme", cls: "tension-rythme" },
+    { key: "confort", cls: "tension-confort" },
   ];
   const n = curve.peur.length;
   const stepX = n > 1 ? (w - pad * 2) / (n - 1) : 0;
+  const data = { ...curve, confort: comfortArc(curve.peur, maxVal) };
 
   function points(arr) {
     return (arr ?? []).map((v, i) => `${pad + i * stepX},${h - pad - (v / maxVal) * (h - pad * 2)}`).join(" ");
   }
 
   const lines = series
-    .filter((s) => curve[s.key])
-    .map((s) => `<polyline points="${points(curve[s.key])}" class="tension-line ${s.cls}" />`)
+    .filter((s) => data[s.key])
+    .map((s) => `<polyline points="${points(data[s.key])}" class="tension-line ${s.cls}" />`)
     .join("");
 
   const cliffhanger = curve.cliffhanger != null
     ? `<p class="tension-cliffhanger">Cliffhanger de fin : ${"🔥".repeat(curve.cliffhanger)}${"·".repeat(Math.max(0, 5 - curve.cliffhanger))}</p>`
+    : "";
+
+  const arcScore = scoreComfortArc(curve.peur);
+  const arcHtml = arcScore
+    ? `<p class="tension-arc-score">Schéma confort → étrange → creux → pic : ${arcScore.score}/${arcScore.total}
+        <span class="tension-arc-detail">(${arcScore.checks.map((c) => `${c.pass ? "✓" : "✗"} ${c.label}`).join(" · ")})</span>
+      </p>`
     : "";
 
   return `<div class="tension-chart">
@@ -118,8 +143,10 @@ function renderTensionChart(curve, options) {
       <span class="legend-dot tension-surprise"></span>Surprise
       <span class="legend-dot tension-nouveaute"></span>Nouveauté
       <span class="legend-dot tension-rythme"></span>Rythme
+      <span class="legend-dot tension-confort"></span>Confort
     </div>
     ${cliffhanger}
+    ${arcHtml}
     ${showAvis && curve.avis ? `<p class="tension-avis">${escapeHtml(curve.avis)}</p>` : ""}
   </div>`;
 }
