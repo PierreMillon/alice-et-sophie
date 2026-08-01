@@ -10,6 +10,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+  <nav id="sidebar" class="sidebar" aria-hidden="true">
+    <button id="sidebar-close" class="sidebar-close" aria-label="Fermer le menu">✕</button>
+    <p class="sidebar-title">Aller à…</p>
+    <a href="#stories" class="sidebar-link">Histoires</a>
+    <ul id="sidebar-stories-list" class="sidebar-sublist"></ul>
+    <a href="#character-sheets" class="sidebar-link">Personnages</a>
+    <a href="#architecture-notes" class="sidebar-link">Notes</a>
+    <a href="#structure-notes" class="sidebar-link">Architecture de la série</a>
+  </nav>
+
   <header class="site-header" id="top">
     <p class="eyebrow">Atelier</p>
     <h1>Alice &amp; Sophie</h1>
@@ -19,8 +31,8 @@
   <nav class="site-nav">
     <a href="#stories">Histoires</a>
     <a href="#character-sheets">Personnages</a>
-    <a href="#architecture-notes">Notes brouillon</a>
-    <a href="#structure-notes">Notes de structure</a>
+    <a href="#architecture-notes">Notes</a>
+    <a href="#structure-notes">Architecture de la série</a>
   </nav>
 
   <section id="stories" class="evening-section stories-section">
@@ -42,7 +54,7 @@
 
   <section id="architecture-notes" class="architecture-section">
     <div class="architecture-inner">
-      <h2>Notes brouillon d'architecture</h2>
+      <h2>Notes</h2>
       <p class="section-intro">Idées, concepts et logiques narratives en vrac — le matériau brut avant qu'il ne devienne une histoire.</p>
       <ul id="architecture-notes-list" class="architecture-list"></ul>
     </div>
@@ -50,7 +62,7 @@
 
   <section id="structure-notes" class="architecture-section structure-section">
     <div class="architecture-inner">
-      <h2>Notes de structure</h2>
+      <h2>Architecture de la série</h2>
       <p class="section-intro">Grilles de lecture réutilisables pour construire ou vérifier une histoire — points principaux et points d'attention, comme pour les fiches personnage.</p>
       <ul id="structure-notes-list" class="sheet-list structure-list"></ul>
 
