@@ -380,5 +380,231 @@
         "Aucun de ces titres n'inspire de piste immédiate pour l'instant — à ressortir plus tard quand une histoire correspondra à l'ambiance."
       ]
     }
+  ],
+  "seriesChecklist": {
+    "intro": "Passages récurrents observés dans les histoires (inspiré de la structure \"Chair de poule\") — utile pour repérer ce qui manque avant de publier une nouvelle histoire.",
+    "criteria": [
+      {
+        "key": "parents",
+        "label": "Départ ou absence des parents"
+      },
+      {
+        "key": "lieu",
+        "label": "Lieu isolé bien identifié"
+      },
+      {
+        "key": "figure",
+        "label": "Figure adulte ambiguë"
+      },
+      {
+        "key": "enigme",
+        "label": "Énigme non résolue"
+      },
+      {
+        "key": "meteo",
+        "label": "Saison/météo marquée"
+      },
+      {
+        "key": "duo",
+        "label": "Duo Alice & Sophie"
+      },
+      {
+        "key": "suspens",
+        "label": "Fin en suspension"
+      },
+      {
+        "key": "fantastique",
+        "label": "Élément fantastique explicite"
+      }
+    ],
+    "rows": [
+      {
+        "story": "Le Bossu d'Argueil",
+        "checks": {
+          "parents": true,
+          "lieu": true,
+          "figure": true,
+          "enigme": true,
+          "meteo": false,
+          "duo": true,
+          "suspens": true,
+          "fantastique": false
+        }
+      },
+      {
+        "story": "L'énigme de Nalchim",
+        "checks": {
+          "parents": true,
+          "lieu": true,
+          "figure": true,
+          "enigme": true,
+          "meteo": true,
+          "duo": true,
+          "suspens": true,
+          "fantastique": false
+        }
+      },
+      {
+        "story": "La Sorcière des Carpates",
+        "checks": {
+          "parents": false,
+          "lieu": true,
+          "figure": false,
+          "enigme": true,
+          "meteo": false,
+          "duo": false,
+          "suspens": true,
+          "fantastique": true
+        }
+      },
+      {
+        "story": "Anomalie magnifique",
+        "checks": {
+          "parents": false,
+          "lieu": true,
+          "figure": false,
+          "enigme": false,
+          "meteo": true,
+          "duo": false,
+          "suspens": false,
+          "fantastique": true
+        }
+      },
+      {
+        "story": "Les Rêves Légendaires",
+        "checks": {
+          "parents": false,
+          "lieu": true,
+          "figure": false,
+          "enigme": false,
+          "meteo": true,
+          "duo": false,
+          "suspens": false,
+          "fantastique": true
+        }
+      }
+    ]
+  },
+  "tensionCurves": [
+    {
+      "story": "Le Bossu d'Argueil",
+      "peur": [
+        1,
+        2,
+        2,
+        3,
+        5
+      ],
+      "surprise": [
+        1,
+        1,
+        2,
+        4,
+        5
+      ],
+      "nouveaute": [
+        3,
+        3,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "story": "L'énigme de Nalchim",
+      "peur": [
+        2,
+        2,
+        4,
+        2,
+        1
+      ],
+      "surprise": [
+        1,
+        1,
+        5,
+        2,
+        3
+      ],
+      "nouveaute": [
+        2,
+        1,
+        4,
+        3,
+        4
+      ]
+    },
+    {
+      "story": "La Sorcière des Carpates",
+      "peur": [
+        1,
+        2,
+        1,
+        2,
+        3
+      ],
+      "surprise": [
+        2,
+        2,
+        3,
+        4,
+        3
+      ],
+      "nouveaute": [
+        2,
+        3,
+        4,
+        3,
+        2
+      ]
+    },
+    {
+      "story": "Anomalie magnifique",
+      "peur": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "surprise": [
+        0,
+        0,
+        1,
+        4,
+        1
+      ],
+      "nouveaute": [
+        1,
+        1,
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "story": "Les Rêves Légendaires",
+      "peur": [
+        1,
+        2,
+        2,
+        3,
+        3
+      ],
+      "surprise": [
+        1,
+        1,
+        2,
+        2,
+        4
+      ],
+      "nouveaute": [
+        1,
+        2,
+        3,
+        3,
+        2
+      ]
+    }
   ]
 }

@@ -478,6 +478,120 @@ section h2 {
   color: var(--color-green);
 }
 
+.substructure-heading {
+  margin-top: 2.5rem;
+  font-size: 1.3rem;
+  color: var(--color-black);
+}
+
+.checklist-scroll {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.checklist-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 640px;
+  background-color: var(--color-card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.checklist-table th,
+.checklist-table td {
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(22, 18, 19, 0.1);
+  font-size: 0.85rem;
+}
+
+.checklist-table thead th {
+  color: var(--color-black);
+  font-weight: 700;
+  vertical-align: bottom;
+}
+
+.checklist-table th[scope="row"] {
+  text-align: left;
+  color: var(--color-black);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.check-yes {
+  color: var(--color-green);
+  font-weight: 700;
+}
+
+.check-no {
+  color: var(--color-muted);
+}
+
+.tension-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.tension-chart {
+  background-color: var(--color-card-bg);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.tension-title {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-black);
+}
+
+.tension-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.tension-line {
+  fill: none;
+  stroke-width: 2.5;
+}
+
+.tension-peur {
+  stroke: var(--color-red);
+}
+
+.tension-surprise {
+  stroke: var(--color-orange);
+}
+
+.tension-nouveaute {
+  stroke: var(--color-green);
+}
+
+.tension-legend {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: currentColor;
+}
+
+.legend-dot.tension-peur { background-color: var(--color-red); }
+.legend-dot.tension-surprise { background-color: var(--color-orange); margin-left: 0.6rem; }
+.legend-dot.tension-nouveaute { background-color: var(--color-green); margin-left: 0.6rem; }
+
 .site-footer {
   text-align: center;
   padding: 1.5rem;
