@@ -17,15 +17,22 @@ function goBack(fallbackHash) {
   }
 }
 
+const TITLE_LOGO_EXCLUDED = new Set(["Alice", "Sophie", "Clothilde", "Benjamin"]);
+
+function titleLogoSheet(item, characterSheets) {
+  if (!characterSheets || !(item.characters ?? []).length) return null;
+  const candidates = item.characters
+    .filter((n) => !TITLE_LOGO_EXCLUDED.has(n))
+    .map((n) => characterSheets.find((s) => s.name === n))
+    .filter((s) => s && s.portrait);
+  if (!candidates.length) return null;
+  const antagonist = candidates.find((s) => (s.role ?? "").includes("Antagoniste"));
+  return antagonist ?? candidates[0];
+}
+
 function titleLogo(item, characterSheets) {
-  if (!characterSheets || !(item.characters ?? []).length) return "";
-  const name = item.characters.find((n) => {
-    const sheet = characterSheets.find((s) => s.name === n);
-    return sheet && sheet.portrait;
-  });
-  if (!name) return "";
-  const sheet = characterSheets.find((s) => s.name === name);
-  return `<img class="title-logo" src="${escapeHtml(sheet.portrait)}" alt="">`;
+  const sheet = titleLogoSheet(item, characterSheets);
+  return sheet ? `<img class="title-logo" src="${escapeHtml(sheet.portrait)}" alt="">` : "";
 }
 
 function renderList(containerId, items, renderItem) {
