@@ -421,6 +421,30 @@ section h2 {
   color: #cbb9b3;
 }
 
+.exploration-notes {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(242, 232, 226, 0.25);
+}
+
+.exploration-notes-title {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f2e8e2;
+}
+
+.exploration-notes-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #cbb9b3;
+  font-size: 0.9rem;
+}
+
+.exploration-notes-list li {
+  margin-bottom: 0.4rem;
+}
+
 .cross-link {
   color: var(--color-red);
   font-weight: 600;
