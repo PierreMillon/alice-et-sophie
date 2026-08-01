@@ -50,7 +50,7 @@ function renderStructureNote(note) {
   </li>`;
 }
 
-function initCharacterSheets(sheets) {
+function initCharacterSheets(sheets, storyCollections) {
   const container = document.getElementById("character-sheets-app");
 
   if (!sheets || sheets.length === 0) {
@@ -64,21 +64,42 @@ function initCharacterSheets(sheets) {
       : "";
   }
 
+  function previewCard(sheet, index) {
+    return `
+      <li class="sheet-preview" data-index="${index}">
+        ${portraitImg(sheet, "sheet-preview-portrait")}
+        <h3>${escapeHtml(sheet.name ?? "Sans nom")}</h3>
+        ${sheet.role ? `<p class="sheet-role">${escapeHtml(sheet.role)}</p>` : ""}
+      </li>`;
+  }
+
   function showList() {
-    container.innerHTML = `<ul class="sheet-list">${sheets
-      .map((sheet, index) => `
-        <li class="sheet-preview" data-index="${index}">
-          ${portraitImg(sheet, "sheet-preview-portrait")}
-          <h3>${escapeHtml(sheet.name ?? "Sans nom")}</h3>
-          ${sheet.role ? `<p class="sheet-role">${escapeHtml(sheet.role)}</p>` : ""}
-        </li>`)
-      .join("")}</ul>`;
+    const entries = sheets.map((sheet, index) => ({ sheet, index }));
+    const recurring = entries.filter((e) => e.sheet.recurring);
+    const others = entries.filter((e) => !e.sheet.recurring);
+
+    container.innerHTML = `
+      <ul class="sheet-list">${recurring.map((e) => previewCard(e.sheet, e.index)).join("")}</ul>
+      ${others.length ? `<p class="sheet-group-label">Autres personnages</p>` : ""}
+      <ul class="sheet-list">${others.map((e) => previewCard(e.sheet, e.index)).join("")}</ul>`;
 
     container.querySelectorAll(".sheet-preview").forEach((el) => {
       el.addEventListener("click", () => {
         window.location.hash = `sheet-${el.dataset.index}`;
       });
     });
+  }
+
+  function appearancesFor(name) {
+    const links = [];
+    storyCollections.forEach(({ items, hashPrefix, label }) => {
+      (items ?? []).forEach((item, index) => {
+        if ((item.characters ?? []).includes(name)) {
+          links.push({ title: item.title, href: `#${hashPrefix}-${index}` });
+        }
+      });
+    });
+    return links;
   }
 
   function showDetail(index) {
@@ -94,6 +115,12 @@ function initCharacterSheets(sheets) {
     const flags = (sheet.flags ?? [])
       .map((flag) => `<p class="sheet-flag">⚠️ ${escapeHtml(flag.text ?? "")}</p>`)
       .join("");
+    const appearances = appearancesFor(sheet.name);
+    const appearsIn = appearances.length
+      ? `<p class="cross-links">Apparaît dans : ${appearances
+          .map((a) => `<a class="cross-link" href="${a.href}">${escapeHtml(a.title)}</a>`)
+          .join(", ")}</p>`
+      : "";
 
     container.innerHTML = `
       <div class="sheet-detail">
@@ -107,6 +134,7 @@ function initCharacterSheets(sheets) {
         </div>
         ${traits ? `<ul class="sheet-traits">${traits}</ul>` : ""}
         ${examples ? `<ul class="sheet-examples">${examples}</ul>` : ""}
+        ${appearsIn}
         ${flags ? `<div class="sheet-flags">${flags}</div>` : ""}
       </div>`;
   }
@@ -125,7 +153,7 @@ function initCharacterSheets(sheets) {
 }
 
 function initTextCollection(containerId, items, options) {
-  const { hashPrefix, sectionHash, backLabel } = options;
+  const { hashPrefix, sectionHash, backLabel, characterSheets } = options;
   const container = document.getElementById(containerId);
 
   if (!items || items.length === 0) {
@@ -133,10 +161,24 @@ function initTextCollection(containerId, items, options) {
     return;
   }
 
+  function characterLinks(item) {
+    if (!characterSheets || !(item.characters ?? []).length) {
+      return "";
+    }
+    const links = item.characters.map((name) => {
+      const idx = characterSheets.findIndex((s) => s.name === name);
+      return idx >= 0
+        ? `<a class="cross-link" href="#sheet-${idx}">${escapeHtml(name)}</a>`
+        : escapeHtml(name);
+    });
+    return `<p class="cross-links">Personnages : ${links.join(", ")}</p>`;
+  }
+
   function showList() {
     container.innerHTML = `<ul class="evening-list">${items
       .map((item, index) => `
         <li class="evening-preview" data-index="${index}">
+          ${item.tone ? `<span class="tone-tag">${escapeHtml(item.tone)}</span>` : ""}
           <h3>${escapeHtml(item.title ?? "Sans titre")}</h3>
           ${item.note ? `<p class="evening-note">${escapeHtml(item.note)}</p>` : ""}
           ${item.warning ? `<p class="evening-warning">⚠️ ${escapeHtml(item.warning)}</p>` : ""}
@@ -160,10 +202,12 @@ function initTextCollection(containerId, items, options) {
     container.innerHTML = `
       <div class="evening-detail">
         <a href="#${sectionHash}" class="evening-back">← ${escapeHtml(backLabel)}</a>
+        ${item.tone ? `<span class="tone-tag">${escapeHtml(item.tone)}</span>` : ""}
         <h3>${escapeHtml(item.title ?? "Sans titre")}</h3>
         ${item.note ? `<p class="evening-note">${escapeHtml(item.note)}</p>` : ""}
         ${item.warning ? `<p class="evening-warning">⚠️ ${escapeHtml(item.warning)}</p>` : ""}
         <div class="evening-content">${renderParagraphs(item.content)}</div>
+        ${characterLinks(item)}
       </div>`;
   }
 
@@ -186,20 +230,20 @@ loadData()
       hashPrefix: "story",
       sectionHash: "stories",
       backLabel: "Retour aux histoires",
-    });
-    initCharacterSheets(data.characterSheets);
-    renderList("architecture-notes-list", data.architectureNotes, renderArchitectureNote);
-    renderList("structure-notes-list", data.structureNotes, renderStructureNote);
-    initTextCollection("evening-stories-app", data.eveningStories, {
-      hashPrefix: "evening",
-      sectionHash: "evening-stories",
-      backLabel: "Retour aux histoires du soir",
+      characterSheets: data.characterSheets,
     });
     initTextCollection("alice-fugues-app", data.aliceFugues, {
       hashPrefix: "fugue",
       sectionHash: "alice-fugues",
       backLabel: "Retour aux Fugues d'Alice",
+      characterSheets: data.characterSheets,
     });
+    initCharacterSheets(data.characterSheets, [
+      { items: data.stories, hashPrefix: "story" },
+      { items: data.aliceFugues, hashPrefix: "fugue" },
+    ]);
+    renderList("architecture-notes-list", data.architectureNotes, renderArchitectureNote);
+    renderList("structure-notes-list", data.structureNotes, renderStructureNote);
   })
   .catch((error) => {
     console.error("Impossible de charger data.json :", error);
