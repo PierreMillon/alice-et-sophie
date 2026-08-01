@@ -323,6 +323,15 @@ function initTextCollection(containerId, items, options) {
     return;
   }
 
+  function explorationNotesFor(item) {
+    if (!item.explorationNotes || !item.explorationNotes.length) return "";
+    const points = item.explorationNotes.map((point) => `<li>${escapeHtml(point)}</li>`).join("");
+    return `<div class="exploration-notes">
+      <p class="exploration-notes-title">Pistes à explorer</p>
+      <ul class="exploration-notes-list">${points}</ul>
+    </div>`;
+  }
+
   function characterLinks(item) {
     if (!characterSheets || !(item.characters ?? []).length) {
       return "";
@@ -372,6 +381,7 @@ function initTextCollection(containerId, items, options) {
         ${storyChecklistFor(item, seriesChecklist)}
         <div class="evening-content">${renderParagraphs(item.content)}</div>
         ${characterLinks(item)}
+        ${explorationNotesFor(item)}
       </div>`;
   }
 
