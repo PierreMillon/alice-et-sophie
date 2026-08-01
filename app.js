@@ -55,6 +55,65 @@ function renderStructureNote(note) {
   </li>`;
 }
 
+function renderSeriesChecklist(checklist) {
+  const container = document.getElementById("series-checklist-app");
+  if (!checklist || !checklist.rows || checklist.rows.length === 0) {
+    container.innerHTML = '<p class="empty-state">Rien à afficher pour le moment.</p>';
+    return;
+  }
+
+  const headerCells = checklist.criteria.map((c) => `<th>${escapeHtml(c.label)}</th>`).join("");
+  const rows = checklist.rows
+    .map((row) => {
+      const cells = checklist.criteria
+        .map((c) => `<td class="${row.checks[c.key] ? "check-yes" : "check-no"}">${row.checks[c.key] ? "✓" : "—"}</td>`)
+        .join("");
+      return `<tr><th scope="row">${escapeHtml(row.story)}</th>${cells}</tr>`;
+    })
+    .join("");
+
+  container.innerHTML = `
+    ${checklist.intro ? `<p class="section-intro">${escapeHtml(checklist.intro)}</p>` : ""}
+    <div class="checklist-scroll">
+      <table class="checklist-table">
+        <thead><tr><th scope="col"></th>${headerCells}</tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+}
+
+function renderTensionChart(curve) {
+  const w = 280;
+  const h = 90;
+  const pad = 8;
+  const maxVal = 5;
+  const series = [
+    { key: "peur", cls: "tension-peur" },
+    { key: "surprise", cls: "tension-surprise" },
+    { key: "nouveaute", cls: "tension-nouveaute" },
+  ];
+  const n = curve.peur.length;
+  const stepX = n > 1 ? (w - pad * 2) / (n - 1) : 0;
+
+  function points(arr) {
+    return arr.map((v, i) => `${pad + i * stepX},${h - pad - (v / maxVal) * (h - pad * 2)}`).join(" ");
+  }
+
+  const lines = series
+    .map((s) => `<polyline points="${points(curve[s.key])}" class="tension-line ${s.cls}" />`)
+    .join("");
+
+  return `<div class="tension-chart">
+    <p class="tension-title">${escapeHtml(curve.story ?? "")}</p>
+    <svg viewBox="0 0 ${w} ${h}" class="tension-svg" preserveAspectRatio="none">${lines}</svg>
+    <div class="tension-legend">
+      <span class="legend-dot tension-peur"></span>Peur
+      <span class="legend-dot tension-surprise"></span>Surprise
+      <span class="legend-dot tension-nouveaute"></span>Nouveauté
+    </div>
+  </div>`;
+}
+
 function initCharacterSheets(sheets, storyCollections) {
   const container = document.getElementById("character-sheets-app");
 
@@ -248,6 +307,10 @@ loadData()
     ]);
     renderList("architecture-notes-list", data.architectureNotes, renderArchitectureNote);
     renderList("structure-notes-list", data.structureNotes, renderStructureNote);
+    renderSeriesChecklist(data.seriesChecklist);
+    document.getElementById("tension-charts-app").innerHTML = (data.tensionCurves ?? [])
+      .map(renderTensionChart)
+      .join("");
   })
   .catch((error) => {
     console.error("Impossible de charger data.json :", error);
