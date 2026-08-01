@@ -606,3 +606,29 @@ section h2 {
   color: #cbb9b3;
   font-size: 0.8rem;
 }
+
+.pending-list {
+  list-style: none;
+  margin: 1rem 0 2.5rem;
+  padding: 0;
+  background-color: var(--color-card-bg);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+.pending-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  font-size: 0.9rem;
+}
+
+.pending-box {
+  flex-shrink: 0;
+}
+
+.pending-done {
+  color: var(--color-muted);
+  text-decoration: line-through;
+}
