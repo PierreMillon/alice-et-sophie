@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
   <div id="sidebar-overlay" class="sidebar-overlay"></div>
   <nav id="sidebar" class="sidebar" aria-hidden="true">
     <button id="sidebar-close" class="sidebar-close" aria-label="Fermer le menu">✕</button>
@@ -32,10 +31,13 @@
   </header>
 
   <nav class="site-nav">
-    <a href="#stories">Histoires</a>
-    <a href="#character-sheets">Personnages</a>
-    <a href="#architecture-notes">Notes</a>
-    <a href="#structure-notes">Architecture de la série</a>
+    <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <div class="site-nav-links">
+      <a href="#stories">Histoires</a>
+      <a href="#character-sheets">Personnages</a>
+      <a href="#architecture-notes">Notes</a>
+      <a href="#structure-notes">Architecture de la série</a>
+    </div>
   </nav>
 
   <section id="stories" class="evening-section stories-section">
