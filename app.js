@@ -105,7 +105,8 @@ function renderSeriesChecklist(checklist) {
         <thead><tr><th scope="col"></th>${headerCells}</tr></thead>
         <tbody>${rows}</tbody>
       </table>
-    </div>`;
+    </div>
+    <p class="checklist-scroll-hint">↔ Faites glisser le tableau pour voir toutes les colonnes.</p>`;
 }
 
 function storyChecklistFor(item, checklist) {
@@ -332,6 +333,16 @@ function initTextCollection(containerId, items, options) {
     </div>`;
   }
 
+  function analysisDetailsFor(item) {
+    const chart = tensionChartFor(item);
+    const checklist = storyChecklistFor(item, seriesChecklist);
+    if (!chart && !checklist) return "";
+    return `<details class="story-analysis">
+      <summary>Analyse de structure (rythme et checklist)</summary>
+      <div class="story-analysis-body">${chart}${checklist}</div>
+    </details>`;
+  }
+
   function characterLinks(item) {
     if (!characterSheets || !(item.characters ?? []).length) {
       return "";
@@ -377,11 +388,10 @@ function initTextCollection(containerId, items, options) {
         <h3>${escapeHtml(item.title ?? "Sans titre")}</h3>
         ${item.note ? `<p class="evening-note">${escapeHtml(item.note)}</p>` : ""}
         ${item.warning ? `<p class="evening-warning">⚠️ ${escapeHtml(item.warning)}</p>` : ""}
-        ${tensionChartFor(item)}
-        ${storyChecklistFor(item, seriesChecklist)}
         <div class="evening-content">${renderParagraphs(item.content)}</div>
         ${characterLinks(item)}
         ${explorationNotesFor(item)}
+        ${analysisDetailsFor(item)}
       </div>`;
   }
 
