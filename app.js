@@ -60,21 +60,21 @@ function scrollSectionIntoView(container) {
   section.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-function renderArchitectureNote(note) {
-  return `<li class="architecture-card">
+function renderArchitectureNote(note, index) {
+  return `<li class="architecture-card" id="architecture-note-${index}">
     <h3>${escapeHtml(note.title ?? "Sans titre")}</h3>
     ${note.rawNote ? `<p class="architecture-raw">${escapeHtml(note.rawNote)}</p>` : ""}
     ${note.analysis ? `<p class="architecture-analysis"><strong>Logique extraite :</strong> ${escapeHtml(note.analysis)}</p>` : ""}
   </li>`;
 }
 
-function renderStructureNote(note) {
+function renderStructureNote(note, index) {
   const keyPoints = (note.keyPoints ?? []).map((point) => `<li>${escapeHtml(point)}</li>`).join("");
   const attentionPoints = (note.attentionPoints ?? [])
     .map((point) => `<p class="sheet-flag">⚠️ ${escapeHtml(point)}</p>`)
     .join("");
 
-  return `<li class="sheet-preview structure-card">
+  return `<li class="sheet-preview structure-card" id="structure-note-${index}">
     <h3>${escapeHtml(note.title ?? "Sans titre")}</h3>
     ${keyPoints ? `<ul class="sheet-traits">${keyPoints}</ul>` : ""}
     ${attentionPoints ? `<div class="sheet-flags">${attentionPoints}</div>` : ""}
@@ -474,7 +474,7 @@ function initTextCollection(containerId, items, options) {
   route(false);
 }
 
-function initSidebar(stories) {
+function initSidebar(stories, characterSheets, architectureNotes, structureNotes) {
   const toggle = document.getElementById("sidebar-toggle");
   const sidebar = document.getElementById("sidebar");
   const overlay = document.getElementById("sidebar-overlay");
@@ -502,12 +502,18 @@ function initSidebar(stories) {
     if (event.key === "Escape") closeSidebar();
   });
 
-  const list = document.getElementById("sidebar-stories-list");
-  if (list && stories && stories.length) {
-    list.innerHTML = stories
-      .map((story, index) => `<li><a href="#story-${index}">${escapeHtml(story.title ?? "Sans titre")}</a></li>`)
+  function fillSublist(id, items, hrefFor) {
+    const list = document.getElementById(id);
+    if (!list || !items || !items.length) return;
+    list.innerHTML = items
+      .map((entry, index) => `<li><a href="${hrefFor(entry, index)}">${escapeHtml(entry.title ?? entry.name ?? "Sans titre")}</a></li>`)
       .join("");
   }
+
+  fillSublist("sidebar-stories-list", stories, (_, index) => `#story-${index}`);
+  fillSublist("sidebar-characters-list", characterSheets, (_, index) => `#sheet-${index}`);
+  fillSublist("sidebar-notes-list", architectureNotes, (_, index) => `#architecture-note-${index}`);
+  fillSublist("sidebar-architecture-list", structureNotes, (_, index) => `#structure-note-${index}`);
 
   sidebar.querySelectorAll("a").forEach((a) => {
     a.addEventListener("click", closeSidebar);
@@ -544,7 +550,7 @@ loadData()
     document.getElementById("tension-charts-app").innerHTML = (data.tensionCurves ?? [])
       .map((c) => renderTensionChart(c, { showTitle: true, showAvis: true, storyHash: storyHashes.get(c.story) }))
       .join("");
-    initSidebar(data.stories);
+    initSidebar(data.stories, data.characterSheets, data.architectureNotes, data.structureNotes);
   })
   .catch((error) => {
     console.error("Impossible de charger data.json :", error);
