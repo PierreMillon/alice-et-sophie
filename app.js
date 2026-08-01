@@ -62,24 +62,40 @@ function renderSeriesChecklist(checklist) {
     return;
   }
 
-  const headerCells = checklist.criteria.map((c) => `<th>${escapeHtml(c.label)}</th>`).join("");
-  const rows = checklist.rows
-    .map((row) => {
-      const cells = checklist.criteria
-        .map((c) => `<td class="${row.checks[c.key] ? "check-yes" : "check-no"}">${row.checks[c.key] ? "✓" : "—"}</td>`)
+  const groups = checklist.groups && checklist.groups.length
+    ? checklist.groups
+    : [{ key: null, title: "", source: "" }];
+
+  const tables = groups
+    .map((group) => {
+      const groupCriteria = checklist.criteria.filter((c) => (group.key ? c.group === group.key : true));
+      if (groupCriteria.length === 0) return "";
+
+      const headerCells = groupCriteria.map((c) => `<th>${escapeHtml(c.label)}</th>`).join("");
+      const rows = checklist.rows
+        .map((row) => {
+          const cells = groupCriteria
+            .map((c) => `<td class="${row.checks[c.key] ? "check-yes" : "check-no"}">${row.checks[c.key] ? "✓" : "—"}</td>`)
+            .join("");
+          return `<tr><th scope="row">${escapeHtml(row.story)}</th>${cells}</tr>`;
+        })
         .join("");
-      return `<tr><th scope="row">${escapeHtml(row.story)}</th>${cells}</tr>`;
+
+      return `
+        ${group.title ? `<h4 class="checklist-group-title">${escapeHtml(group.title)}</h4>` : ""}
+        ${group.source ? `<p class="checklist-group-source">Source : ${escapeHtml(group.source)}</p>` : ""}
+        <div class="checklist-scroll">
+          <table class="checklist-table">
+            <thead><tr><th scope="col"></th>${headerCells}</tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>`;
     })
     .join("");
 
   container.innerHTML = `
     ${checklist.intro ? `<p class="section-intro">${escapeHtml(checklist.intro)}</p>` : ""}
-    <div class="checklist-scroll">
-      <table class="checklist-table">
-        <thead><tr><th scope="col"></th>${headerCells}</tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>`;
+    ${tables}`;
 }
 
 function comfortArc(peur, maxVal) {

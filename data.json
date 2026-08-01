@@ -414,141 +414,240 @@
     }
   ],
   "seriesChecklist": {
-    "intro": "Passages récurrents observés dans les histoires (inspiré de la structure \"Chair de poule\") — utile pour repérer ce qui manque avant de publier une nouvelle histoire. Aucune histoire actuelle n'a encore de fou savant ni d'astuce pédagogique cachée.",
+    "intro": "Grille construite à partir de deux sources citées explicitement, pas d'une intuition : (A) la structure en 3 actes façon Save the Cat / le Voyage du Héros de Campbell (déjà noté dans les Notes de structure), recoupée avec les 5 tropes cités — protagoniste, antagoniste, mystère, doute, résolution ; (B) la formule R.L. Stine / Chair de Poule (lieu, faux méchant, vrai méchant, escalade, twist final) ; (C) la couleur locale propre à la série Alice & Sophie, qui n'est pas un trope universel.",
+    "groups": [
+      {
+        "key": "A",
+        "title": "Structure narrative universelle",
+        "source": "Save the Cat / Voyage du Héros + tropes protagoniste-antagoniste-mystère-doute-résolution"
+      },
+      {
+        "key": "B",
+        "title": "Formule R.L. Stine / Chair de Poule",
+        "source": "Analyse de la structure classique des Goosebumps"
+      },
+      {
+        "key": "C",
+        "title": "Couleur locale Alice & Sophie",
+        "source": "Motifs récurrents propres à la série, pas des tropes universels"
+      }
+    ],
     "criteria": [
       {
-        "key": "parents",
-        "label": "Départ ou absence des parents"
+        "key": "protagoniste",
+        "label": "Protagoniste avec un but/manque clair",
+        "group": "A"
+      },
+      {
+        "key": "catalyseur",
+        "label": "Catalyseur net (élément déclencheur)",
+        "group": "A"
+      },
+      {
+        "key": "antagoniste",
+        "label": "Antagoniste ou opposition incarnée",
+        "group": "A"
+      },
+      {
+        "key": "mystere",
+        "label": "Mystère non résolu qui tire en avant",
+        "group": "A"
+      },
+      {
+        "key": "doute",
+        "label": "Doute (issue incertaine, hésitation)",
+        "group": "A"
+      },
+      {
+        "key": "faux_repit",
+        "label": "Fausse victoire / faux répit (midpoint)",
+        "group": "A"
+      },
+      {
+        "key": "point_bas",
+        "label": "Point bas avant la fin (all is lost)",
+        "group": "A"
+      },
+      {
+        "key": "resolution",
+        "label": "Résolution claire du conflit",
+        "group": "A"
       },
       {
         "key": "lieu",
-        "label": "Lieu isolé bien identifié"
+        "label": "Lieu isolé, presque un personnage",
+        "group": "B"
       },
       {
         "key": "faux_mechant",
-        "label": "Un faux méchant (suspect qui s'avère innocent)"
+        "label": "Faux méchant (suspect innocent)",
+        "group": "B"
       },
       {
         "key": "vrai_mechant",
-        "label": "Un vrai méchant (l'antagoniste réel)"
+        "label": "Vrai méchant révélé",
+        "group": "B"
       },
       {
-        "key": "enigme",
-        "label": "Énigme non résolue"
+        "key": "escalade",
+        "label": "Escalade en paliers (2-3 incidents)",
+        "group": "B"
+      },
+      {
+        "key": "twist",
+        "label": "Fin en twist/cliffhanger",
+        "group": "B"
+      },
+      {
+        "key": "parents",
+        "label": "Départ ou absence des parents",
+        "group": "C"
       },
       {
         "key": "meteo",
-        "label": "Saison/météo marquée"
+        "label": "Saison/météo marquée",
+        "group": "C"
       },
       {
         "key": "duo",
-        "label": "Duo Alice & Sophie"
-      },
-      {
-        "key": "suspens",
-        "label": "Fin en suspension"
-      },
-      {
-        "key": "fantastique",
-        "label": "Élément fantastique explicite"
+        "label": "Duo Alice & Sophie actif",
+        "group": "C"
       },
       {
         "key": "fou_savant",
-        "label": "Un « fou savant » / génie excentrique"
+        "label": "Un « fou savant » / génie excentrique",
+        "group": "C"
       },
       {
         "key": "astuce",
-        "label": "Astuce pédagogique cachée (maths/français)"
+        "label": "Astuce pédagogique cachée (maths/français)",
+        "group": "C"
       },
       {
         "key": "activite",
-        "label": "Activité commune filles + parents"
+        "label": "Activité commune filles + parents",
+        "group": "C"
       }
     ],
     "rows": [
       {
         "story": "Le Bossu d'Argueil",
         "checks": {
-          "parents": true,
+          "protagoniste": true,
+          "catalyseur": true,
+          "antagoniste": true,
+          "mystere": true,
+          "doute": false,
+          "faux_repit": true,
+          "point_bas": true,
+          "resolution": false,
           "lieu": true,
-          "enigme": true,
+          "faux_mechant": true,
+          "vrai_mechant": true,
+          "escalade": true,
+          "twist": true,
+          "parents": true,
           "meteo": false,
           "duo": true,
-          "suspens": true,
-          "fantastique": false,
           "fou_savant": false,
           "astuce": false,
-          "activite": false,
-          "faux_mechant": true,
-          "vrai_mechant": true
+          "activite": false
         }
       },
       {
         "story": "L'énigme de Nalchim",
         "checks": {
-          "parents": true,
+          "protagoniste": true,
+          "catalyseur": true,
+          "antagoniste": false,
+          "mystere": true,
+          "doute": true,
+          "faux_repit": false,
+          "point_bas": true,
+          "resolution": false,
           "lieu": true,
-          "enigme": true,
+          "faux_mechant": true,
+          "vrai_mechant": false,
+          "escalade": false,
+          "twist": false,
+          "parents": true,
           "meteo": true,
           "duo": true,
-          "suspens": true,
-          "fantastique": false,
-          "fou_savant": false,
+          "fou_savant": true,
           "astuce": false,
-          "activite": false,
-          "faux_mechant": true,
-          "vrai_mechant": false
+          "activite": false
         }
       },
       {
         "story": "La Sorcière des Carpates",
         "checks": {
-          "parents": false,
+          "protagoniste": false,
+          "catalyseur": true,
+          "antagoniste": false,
+          "mystere": true,
+          "doute": true,
+          "faux_repit": true,
+          "point_bas": true,
+          "resolution": false,
           "lieu": true,
-          "enigme": true,
+          "faux_mechant": false,
+          "vrai_mechant": false,
+          "escalade": true,
+          "twist": false,
+          "parents": false,
           "meteo": false,
           "duo": false,
-          "suspens": true,
-          "fantastique": true,
-          "fou_savant": false,
+          "fou_savant": true,
           "astuce": false,
-          "activite": false,
-          "faux_mechant": false,
-          "vrai_mechant": false
+          "activite": false
         }
       },
       {
         "story": "Anomalie magnifique",
         "checks": {
-          "parents": false,
+          "protagoniste": false,
+          "catalyseur": true,
+          "antagoniste": false,
+          "mystere": true,
+          "doute": false,
+          "faux_repit": false,
+          "point_bas": false,
+          "resolution": true,
           "lieu": true,
-          "enigme": false,
+          "faux_mechant": false,
+          "vrai_mechant": false,
+          "escalade": false,
+          "twist": false,
+          "parents": false,
           "meteo": true,
           "duo": false,
-          "suspens": false,
-          "fantastique": true,
           "fou_savant": false,
           "astuce": false,
-          "activite": false,
-          "faux_mechant": false,
-          "vrai_mechant": false
+          "activite": true
         }
       },
       {
         "story": "Les Rêves Légendaires",
         "checks": {
-          "parents": false,
+          "protagoniste": true,
+          "catalyseur": true,
+          "antagoniste": false,
+          "mystere": true,
+          "doute": true,
+          "faux_repit": false,
+          "point_bas": true,
+          "resolution": false,
           "lieu": true,
-          "enigme": false,
+          "faux_mechant": false,
+          "vrai_mechant": false,
+          "escalade": false,
+          "twist": false,
+          "parents": false,
           "meteo": true,
           "duo": false,
-          "suspens": false,
-          "fantastique": true,
           "fou_savant": false,
           "astuce": false,
-          "activite": false,
-          "faux_mechant": false,
-          "vrai_mechant": false
+          "activite": false
         }
       }
     ]
