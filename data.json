@@ -122,7 +122,10 @@
       "note": "Brouillon inachevé — le texte s'arrête avant la résolution de l'histoire.",
       "warning": "Histoire très sombre, avec des scènes de meurtre et de cannibalisme évoquées — à lire par un parent avant de décider si elle convient à votre enfant.",
       "content": "Sur la gauche, derrière les quatre planches, faisant office de palissade, une herbe bouge.\n\nLundi matin, Max, cuisinier de son état, rentre du marché place Sainte-Cécile, la camionnette chargée et se gare devant le portail de « L’Océan », le restaurant à la mode d’Albi. Sa devanture aux couleurs et aux motifs marins avait une puissance presque magique. On sentait à travers les dessins au style épuré le goût du sel marin et de l’aventure des premiers explorateurs du Nouveau Monde. La façade embaumait.\n\nAprès avoir passé le portail métallique, Max rentra en marche arrière pour placer le coffre au plus près de la porte de service. Il faut dire que bien que ses emplettes étaient légères, il aimait optimiser chacun de ses gestes et mouvements. C’est une habitude de l’école hôtelière qu’il avait gardée.\n\nIl ouvrit le coffre, sortit les deux cagettes de fruits et légumes, et, tenant d’une main en équilibre les victuailles, ouvrit de l’autre la porte de service et s’y engouffra. Il manqua de glisser sur une tache d’huile et laissa échapper un sonore juron. Il préparait une réprimande verbale au commis pour sa négligence de ménage, quand il se souvint brutalement que celui-ci avait décidé de démissionner, sans préavis deux jours plus tôt. Juste la veille du gala annuel des dentistes aveyronnais.\n\nCela avait mis Max dans une galère sans nom quand, comme par miracle, son patron, un gros bonhomme aux cheveux longs, avait assuré le plat principal sans aucune formation en cuisine. Et la soupe était délicieuse. Devant les questions de Max, le boss était resté muet, arguant d’un mélange de « modestie » et « secret de famille » quant à la composition du plat. Un mystère, cet homme. Max avait 34 ans de carrière, et pourtant il n’avait jamais vu de patron embauchant un cuisinier sans vérifier aucune de ses compétences. À vrai dire, cet homme errait entre la cave et la cuisine. Un passionné de vin, de poisson, et maintenant Max le savait, de soupe aux poissons.\n\nQuoi qu’il en soit, c’était la deuxième journée d’essai et il fallait penser au plat du midi et du soir. Il avait prévu de refaire le succès de la soupe aux poissons et pour cela il ne lui manquait plus qu’un ou deux ingrédients. Max se dirigea vers le frigo et en sortit deux bars de 3,5 kg.\n\nLe patron avait ses contacts : deux vieux pêcheurs, au fond de leur barque toute la semaine, flottant entre la cathédrale Sainte-Cécile et le club d’aviron, environ 3 km d’eaux troubles sur le Tarn. Deux gars taciturnes, mais sympathiques, se dit Max, et réguliers dans leurs livraisons de petits paquets noirs comme des fonctionnaires de la CPAM à la pointeuse avant le week-end. Il entreprit de découper les poissons.\n\nLa femme du boss était comptable. Elle avait décidé de réduire les coûts au maximum, et, intoxiquée par le poisson et le vin du Tarn qu’elle servait à ses clients, était devenue folle. Elle avait commencé à engager des tueurs à gages pour récupérer les touristes isolés et les dépecer dans la cave du restaurant. Un fait divers du Tarn Libre, le journal. Le slogan « Nulle part ailleurs » donnait un indice au cuistot. La soupe se remplissait magiquement toutes les nuits et était à base de chair humaine. Dichotomie entre le devant et l’arrière du restaurant.\n\nUn touriste est égaré. La proie classique. Il est en face et voit bouger le soir dans l’ombre la « Vipère », la femme comptable du patron de « L’Océan », jeter les bijoux enlevés aux cadavres découpés à la hâte par les pêcheurs à gages. Ils organisent des virées pour touristes, et quand un client se présente seul, il ne revient jamais. Le touriste voit la femme, elle lance un signal invisible, les pêcheurs saisissent le touriste par derrière, et la femme lève alors les yeux vers le touriste avec un regard de merlan frit. (Comme dans Lovecraft).\n\nMax aiguisait à l’intérieur ses couteaux naïvement et les clients attachaient leurs serviettes autour du cou, salivant à une soirée de charme dans la plus belle ville du monde, disait la brochure.",
-      "characters": []
+      "characters": [
+        "Max",
+        "La Vipère"
+      ]
     },
     {
       "title": "Un très beau soleil",
@@ -681,6 +684,56 @@
         }
       ],
       "recurring": false
+    },
+    {
+      "name": "Max",
+      "role": "Protagoniste de « La Vipère sous l'Océan » — cuisinier du restaurant « L'Océan » à Albi",
+      "portrait": "portraits/max.png",
+      "traits": [
+        "34 ans de carrière, méticuleux, optimise chacun de ses gestes",
+        "N'a jamais vu un patron embaucher un cuisinier sans vérifier ses compétences",
+        "Reproduit la recette de soupe aux poissons de son patron sans jamais en connaître les vrais ingrédients",
+        "Aiguise ses couteaux « naïvement », sans se douter de ce qui se prépare"
+      ],
+      "examples": [
+        {
+          "quote": "Max avait 34 ans de carrière, et pourtant il n'avait jamais vu de patron embauchant un cuisinier sans vérifier aucune de ses compétences.",
+          "source": "La Vipère sous l'Océan"
+        },
+        {
+          "quote": "Max aiguisait à l'intérieur ses couteaux naïvement.",
+          "source": "La Vipère sous l'Océan"
+        }
+      ],
+      "flags": [],
+      "recurring": false
+    },
+    {
+      "name": "La Vipère",
+      "role": "Antagoniste de « La Vipère sous l'Océan » — comptable, épouse du patron de « L'Océan »",
+      "portrait": "portraits/vipere.png",
+      "traits": [
+        "Comptable devenue folle à force de vouloir réduire les coûts au maximum",
+        "Engage des tueurs à gages pour dépecer les touristes isolés",
+        "Jette les bijoux volés aux cadavres depuis l'ombre du restaurant",
+        "Surnommée « la Vipère » par le narrateur, jamais par son vrai nom"
+      ],
+      "examples": [
+        {
+          "quote": "La femme du boss était comptable. Elle avait décidé de réduire les coûts au maximum […] et était devenue folle.",
+          "source": "La Vipère sous l'Océan"
+        },
+        {
+          "quote": "La « Vipère », la femme comptable du patron de « L'Océan », jeter les bijoux enlevés aux cadavres découpés à la hâte par les pêcheurs à gages.",
+          "source": "La Vipère sous l'Océan"
+        }
+      ],
+      "flags": [
+        {
+          "text": "Ni elle ni son mari (« le patron », « le boss ») ne sont nommés autrement dans le texte."
+        }
+      ],
+      "recurring": false
     }
   ],
   "architectureNotes": [
@@ -1159,6 +1212,30 @@
           "astuce": false,
           "activite": false
         }
+      },
+      {
+        "story": "La Vipère sous l'Océan",
+        "checks": {
+          "protagoniste": true,
+          "catalyseur": true,
+          "antagoniste": true,
+          "mystere": true,
+          "doute": false,
+          "faux_repit": false,
+          "point_bas": false,
+          "resolution": false,
+          "lieu": true,
+          "faux_mechant": false,
+          "vrai_mechant": true,
+          "escalade": true,
+          "twist": true,
+          "parents": false,
+          "meteo": false,
+          "duo": false,
+          "fou_savant": false,
+          "astuce": false,
+          "activite": false
+        }
       }
     ]
   },
@@ -1558,6 +1635,39 @@
       ],
       "cliffhanger": 2,
       "avis": "Extrait retenu du pitch : une scène d'épouvante cosmique contemplative plutôt qu'un texte à événements — l'horreur vient de l'ampleur du constat (l'humanité est une poussière insignifiante), pas d'une menace incarnée. Le texte s'arrête sur ce constat, sans scène suivante ; le reste du pitch (nom de la terreur « Megalopsychos », enjeux politiques) est conservé à part dans les Notes plutôt que publié tel quel."
+    },
+    {
+      "story": "La Vipère sous l'Océan",
+      "peur": [
+        1,
+        1,
+        2,
+        3,
+        5
+      ],
+      "surprise": [
+        1,
+        1,
+        2,
+        3,
+        5
+      ],
+      "nouveaute": [
+        1,
+        2,
+        2,
+        3,
+        4
+      ],
+      "rythme": [
+        1,
+        1,
+        2,
+        2,
+        3
+      ],
+      "cliffhanger": 5,
+      "avis": "Montée progressive très maîtrisée : la routine tranquille de Max (arrivage, cuisine) bascule paragraphe après paragraphe vers l'horreur (le mystère de la soupe, puis la révélation du trafic de touristes). Le texte s'arrête net sur les couteaux aiguisés et les clients qui s'installent — cliffhanger fort, aucune résolution publiée pour l'instant."
     }
   ]
 }

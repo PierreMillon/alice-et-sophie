@@ -9,6 +9,25 @@ function escapeHtml(value) {
   return div.innerHTML;
 }
 
+function goBack(fallbackHash) {
+  if (window.history.length > 1) {
+    window.history.back();
+  } else {
+    window.location.hash = fallbackHash;
+  }
+}
+
+function titleLogo(item, characterSheets) {
+  if (!characterSheets || !(item.characters ?? []).length) return "";
+  const name = item.characters.find((n) => {
+    const sheet = characterSheets.find((s) => s.name === n);
+    return sheet && sheet.portrait;
+  });
+  if (!name) return "";
+  const sheet = characterSheets.find((s) => s.name === name);
+  return `<img class="title-logo" src="${escapeHtml(sheet.portrait)}" alt="">`;
+}
+
 function renderList(containerId, items, renderItem) {
   const container = document.getElementById(containerId);
   if (!items || items.length === 0) {
@@ -277,7 +296,7 @@ function initCharacterSheets(sheets, storyCollections) {
 
     container.innerHTML = `
       <div class="sheet-detail">
-        <a href="#character-sheets" class="evening-back">← Retour aux personnages</a>
+        <a href="#character-sheets" class="evening-back">← Retour</a>
         <div class="sheet-header">
           ${portraitImg(sheet, "sheet-portrait")}
           <div>
@@ -290,6 +309,11 @@ function initCharacterSheets(sheets, storyCollections) {
         ${appearsIn}
         ${flags ? `<div class="sheet-flags">${flags}</div>` : ""}
       </div>`;
+
+    container.querySelector(".evening-back").addEventListener("click", (event) => {
+      event.preventDefault();
+      goBack("#character-sheets");
+    });
   }
 
   function route(isNavigation) {
@@ -333,27 +357,33 @@ function initTextCollection(containerId, items, options) {
     </div>`;
   }
 
-  function analysisDetailsFor(item) {
+  function analysisSectionFor(item) {
     const chart = tensionChartFor(item);
     const checklist = storyChecklistFor(item, seriesChecklist);
     if (!chart && !checklist) return "";
-    return `<details class="story-analysis">
-      <summary>Analyse de structure (rythme et checklist)</summary>
+    return `<div class="story-analysis">
+      <p class="story-analysis-title">Analyse de structure (rythme et checklist)</p>
       <div class="story-analysis-body">${chart}${checklist}</div>
-    </details>`;
+    </div>`;
   }
 
   function characterLinks(item) {
     if (!characterSheets || !(item.characters ?? []).length) {
       return "";
     }
-    const links = item.characters.map((name) => {
+    const chips = item.characters.map((name) => {
       const idx = characterSheets.findIndex((s) => s.name === name);
-      return idx >= 0
-        ? `<a class="cross-link" href="#sheet-${idx}">${escapeHtml(name)}</a>`
-        : escapeHtml(name);
+      if (idx < 0) return `<span class="story-character-chip">${escapeHtml(name)}</span>`;
+      const sheet = characterSheets[idx];
+      const portrait = sheet.portrait
+        ? `<img class="story-character-portrait" src="${escapeHtml(sheet.portrait)}" alt="">`
+        : "";
+      return `<a class="story-character-chip" href="#sheet-${idx}">${portrait}<span>${escapeHtml(name)}</span></a>`;
     });
-    return `<p class="cross-links">Personnages : ${links.join(", ")}</p>`;
+    return `<div class="story-characters">
+      <p class="story-characters-title">Personnages de cette histoire</p>
+      <div class="story-characters-list">${chips.join("")}</div>
+    </div>`;
   }
 
   function showList() {
@@ -361,7 +391,7 @@ function initTextCollection(containerId, items, options) {
       .map((item, index) => `
         <li class="evening-preview" data-index="${index}">
           ${item.tone ? `<span class="tone-tag">${escapeHtml(item.tone)}</span>` : ""}
-          <h3>${escapeHtml(item.title ?? "Sans titre")}</h3>
+          <h3>${titleLogo(item, characterSheets)}${escapeHtml(item.title ?? "Sans titre")}</h3>
           ${item.note ? `<p class="evening-note">${escapeHtml(item.note)}</p>` : ""}
           ${item.warning ? `<p class="evening-warning">⚠️ ${escapeHtml(item.warning)}</p>` : ""}
           <span class="evening-read-link">Lire le texte complet →</span>
@@ -385,14 +415,19 @@ function initTextCollection(containerId, items, options) {
       <div class="evening-detail">
         <a href="#${sectionHash}" class="evening-back">← ${escapeHtml(backLabel)}</a>
         ${item.tone ? `<span class="tone-tag">${escapeHtml(item.tone)}</span>` : ""}
-        <h3>${escapeHtml(item.title ?? "Sans titre")}</h3>
+        <h3>${titleLogo(item, characterSheets)}${escapeHtml(item.title ?? "Sans titre")}</h3>
         ${item.note ? `<p class="evening-note">${escapeHtml(item.note)}</p>` : ""}
         ${item.warning ? `<p class="evening-warning">⚠️ ${escapeHtml(item.warning)}</p>` : ""}
         <div class="evening-content">${renderParagraphs(item.content)}</div>
         ${characterLinks(item)}
         ${explorationNotesFor(item)}
-        ${analysisDetailsFor(item)}
+        ${analysisSectionFor(item)}
       </div>`;
+
+    container.querySelector(".evening-back").addEventListener("click", (event) => {
+      event.preventDefault();
+      goBack(`#${sectionHash}`);
+    });
   }
 
   function route(isNavigation) {
