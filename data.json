@@ -156,6 +156,15 @@
         "Benjamin",
         "Le vieil homme du château (fusionné au lierre)"
       ]
+    },
+    {
+      "title": "La danse noire",
+      "tone": "🌙 Sombre",
+      "note": "Brouillon inachevé (version 1.0), nouvelle indépendante sans lien avec l'univers Alice et Sophie. Deux passages restent illisibles ou incertains dans le texte transmis (« Fausseut un peu plus bas… » et « raide comme les fausses au Pas un bruit ») — non corrigés, à clarifier avec l'auteur plutôt que devinés.",
+      "content": "Cela faisait quelques nuits que Michael avait une drôle de sensation en rentrant le soir. Rien de constant, ni de précis. Juste le sentiment que quelque chose était différent, étrange, différent.\n\nÀ 19h47, invariablement, il quittait le travail, s'avançait dans les rues puis se dirigeait sans perdre de temps vers la place du Parlement où il prenait une chocolatine. Ces trois minutes de trajet le faisaient arriver juste à temps pour la fermeture de la boulangerie. La femme qui tenait l'échoppe le saluait d'un petit signe et lui tendait le sachet de commande avant même qu'il ouvre la bouche.\n\nFausseut un peu plus bas en grignotant sa chocolatine à l'arrache comme il l'aimait, c'est-à-dire en laissant tomber des miettes tout en marchant. Il ne comptait pas s'attarder et surtout de ne rien changer à ses habitudes chronométrées. Car Michael était un homme d'habitudes.\n\nMais depuis quelques jours, en tournant à gauche après la rue du Parlement Saint-Pierre pour s'engouffrer dans sa rue, l'atmosphère avait changé. Peu attentif à l'agitation qui régnait en ces lieux de fête, il avait l'habitude de se remémorer sa journée tranquillement en mangeant sa chocolatine, les yeux rivés sur le sol. Les bouches et leurs murmures pouvaient percer la nuit sans pour autant l'atteindre. Mais ce soir-là, Michael prit une seconde pour laquelle il mit plusieurs jours à s'apercevoir du silence dans lequel il flottait. Il était seul. Pas une ombre, rien.\n\nC'était à peu près la seule rue où le tour du problème s'arrêtait. Michael s'arrêta quelques secondes, raide comme les fausses au Pas un bruit.\n\nZone la plus animée de tout Bordeaux, un soir de vendredi, silencieuse comme une cathédrale. Impossible ! Impossible de… comprendre, rien ne ressemblait à son quartier. Pas d'écho, pas de bruits de pas dans les escaliers du bâtiment à côté, rien.\n\nIl fit un pas et sentit derrière lui un déplacement d'air. Enfin quelque chose se dit-il. Mais le temps de se retourner, il ne vit personne.",
+      "characters": [
+        "Michael"
+      ]
     }
   ],
   "characterSheets": [
@@ -518,6 +527,33 @@
       "flags": [
         {
           "text": "Personnage annoncé dans les notes de l'auteur mais pas encore nommé ni montré directement dans les deux premiers chapitres publiés — seuls le château couvert de lierre et son propriétaire reclus sont évoqués pour l'instant."
+        }
+      ],
+      "recurring": false
+    },
+    {
+      "name": "Michael",
+      "role": "Protagoniste de « La danse noire » — un homme d'habitudes, à Bordeaux",
+      "portrait": "portraits/michael.png",
+      "traits": [
+        "Vit selon un rituel minuté à la seconde près (19h47, la même chocolatine, le même trajet)",
+        "Peu attentif à son environnement, perdu dans ses pensées en marchant",
+        "Remarque avec plusieurs jours de retard que quelque chose a changé autour de lui",
+        "Reste étrangement immobile plutôt que de fuir face au silence total d'une rue habituellement bondée"
+      ],
+      "examples": [
+        {
+          "quote": "Car Michael était un homme d'habitudes.",
+          "source": "La danse noire"
+        },
+        {
+          "quote": "Il fit un pas et sentit derrière lui un déplacement d'air.",
+          "source": "La danse noire"
+        }
+      ],
+      "flags": [
+        {
+          "text": "Le texte s'arrête juste après que Michael sente une présence derrière lui, sans se retourner à temps pour la voir — brouillon coupé net, rien n'indique la suite."
         }
       ],
       "recurring": false
@@ -898,6 +934,30 @@
           "astuce": false,
           "activite": true
         }
+      },
+      {
+        "story": "La danse noire",
+        "checks": {
+          "protagoniste": false,
+          "catalyseur": true,
+          "antagoniste": false,
+          "mystere": true,
+          "doute": true,
+          "faux_repit": false,
+          "point_bas": false,
+          "resolution": false,
+          "lieu": true,
+          "faux_mechant": false,
+          "vrai_mechant": false,
+          "escalade": true,
+          "twist": false,
+          "parents": false,
+          "meteo": false,
+          "duo": false,
+          "fou_savant": false,
+          "astuce": false,
+          "activite": false
+        }
       }
     ]
   },
@@ -1165,6 +1225,39 @@
       ],
       "cliffhanger": 1,
       "avis": "Encore trop peu de matière pour juger la formule complète : seuls les deux premiers chapitres, purement d'exposition (installation de la famille, découverte du château), sont écrits. Le seul vrai signal d'alarme est l'odeur du lierre et l'aparté du narrateur en fin de chapitre 2 — tout le reste de la tension reste à écrire. Courbe à revoir dès que la suite arrivera."
+    },
+    {
+      "story": "La danse noire",
+      "peur": [
+        1,
+        1,
+        2,
+        3,
+        4
+      ],
+      "surprise": [
+        1,
+        1,
+        2,
+        2,
+        4
+      ],
+      "nouveaute": [
+        1,
+        2,
+        3,
+        4,
+        4
+      ],
+      "rythme": [
+        1,
+        1,
+        2,
+        2,
+        3
+      ],
+      "cliffhanger": 4,
+      "avis": "Ouverture tout en retenue : la routine minutée de Michael installe un cadre rassurant que le texte dérègle un détail à la fois (le silence, l'absence de monde, puis la sensation d'une présence). Le fragment s'arrête net sur ce dernier signal, sans jamais montrer la menace — cliffhanger fort pour un texte qui n'est encore qu'une ouverture."
     }
   ]
 }
