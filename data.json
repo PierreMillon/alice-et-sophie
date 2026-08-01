@@ -54,6 +54,67 @@
         "Alice"
       ],
       "tone": "💭 Fugue"
+    },
+    {
+      "title": "La Maison du Voyageur",
+      "tone": "📝 Concept",
+      "note": "Concept noté, pas encore rédigée en histoire complète.",
+      "content": "Une maison à louer, présentée comme le QG d'une famille partie sur les routes chercher un enfant disparu. Le locataire n'est plus un simple client mais devient un mécène : le loyer finance la quête (essence, traducteurs, enquêteurs). La maison est habitée par l'absence — carnet de bord, photos, carte du monde couverte de punaises, un lien de correspondance en temps réel avec les parents en voyage.\n\nAlice et Sophie louent cette maison avec leurs parents. Elles y trouvent une quête qui continue sans elles, des objets qui racontent une histoire en cours, et l'occasion de devenir actrices en « gardant le foyer ».",
+      "characters": [
+        "Alice",
+        "Sophie",
+        "Benjamin",
+        "Clothilde"
+      ]
+    },
+    {
+      "title": "Le Couple et la Quête Circulaire",
+      "tone": "📝 Concept",
+      "note": "Concept noté, pas encore rédigée en histoire complète. Même couple que « La Maison du Voyageur ».",
+      "content": "Le même couple que dans « La Maison du Voyageur » : des parents qui ont perdu un enfant et se sont inventé une vie extraordinaire pour survivre à l'absence. Détachement total du matériel — plus rien n'a d'importance face à leur quête. Leur seule identité restante est celle de parents-chercheurs, soudés par l'errance ; les affiches placardées sur les murs sont devenues des reliques sacrées plutôt que des outils de recherche.\n\nSophie les croise. Reste à savoir si elle est la projection de l'enfant qu'ils ont perdu, ou la destination de leur voyage.",
+      "characters": [
+        "Sophie"
+      ]
+    },
+    {
+      "title": "Étrusque",
+      "tone": "📝 Concept",
+      "note": "Concept noté, pas encore rédigée en histoire complète.",
+      "content": "Un lien entre les runes et l'étrusque intrigue Alice et Sophie, qui se retrouvent au CNRS, puis sous terre, dans des catacombes. Elles y croisent un chercheur aussi savant que maladroit, personnage comique pensé comme une respiration plus légère entre deux histoires sombres.",
+      "characters": [
+        "Alice",
+        "Sophie"
+      ]
+    },
+    {
+      "title": "L'équipe de l'inventeur",
+      "tone": "📝 Concept",
+      "note": "Concept noté, pas encore rédigée en histoire complète.",
+      "content": "Un membre de l'équipe d'un inventeur documente absolument tout ce qu'il fait. Alice et Sophie s'en moquent un peu, elles qui préfèrent les gens qui réussissent du premier coup — jusqu'à découvrir que cet homme méticuleux et l'inventeur qu'elles admirent ne font qu'un. La morale : il faut beaucoup d'échecs pour réussir une invention.",
+      "characters": [
+        "Alice",
+        "Sophie"
+      ]
+    },
+    {
+      "title": "Histoire dans l'histoire",
+      "tone": "📝 Concept",
+      "note": "Concept noté, pas encore rédigée en histoire complète.",
+      "content": "Le livre préféré d'Alice et Sophie, celui qu'elles relisent pour se rassurer avec ses contes. Une histoire à l'intérieur de l'histoire — reste à choisir ce que ce livre raconte, et ce qu'il révèle d'elles.",
+      "characters": [
+        "Alice",
+        "Sophie"
+      ]
+    },
+    {
+      "title": "Histoire des parents",
+      "tone": "📝 Concept",
+      "note": "Concept noté, pas encore rédigée en histoire complète.",
+      "content": "Une histoire centrée sur le passé de Benjamin et Clothilde, avant Alice et Sophie.",
+      "characters": [
+        "Benjamin",
+        "Clothilde"
+      ]
     }
   ],
   "characterSheets": [
@@ -318,44 +379,14 @@
   ],
   "architectureNotes": [
     {
-      "title": "La Maison du Voyageur — marketing narratif solidaire",
-      "rawNote": "Concept : une maison de location présentée comme le QG d'une famille partie sur les routes chercher un enfant disparu. Le locataire devient \"mécène\" plutôt que client : les revenus financent la quête (essence, traducteurs, enquêteurs). Immersion totale (carnet de bord, photos, carte du monde), lien de connectivité (écran/journal en temps réel, correspondance locataire-parents), transparence des flux (argent = kilomètres parcourus). Effet viral par solidarité internationale — le lieu physique devient point d'ancrage d'une quête globale.",
-      "analysis": "Logique-clé à retenir pour l'univers Alice & Sophie : le glissement du \"mystère technique\" (curiosité) vers l'\"engagement émotionnel\" (empathie) comme moteur narratif. Applicable à une histoire du soir : un lieu (maison, chambre d'hôtes) habité par l'absence de quelqu'un, où les objets racontent une quête en cours, et où le lecteur/personnage devient acteur en \"gardant le foyer\". Fait écho au thème déjà présent des parents de Benjamin/Clothilde souvent absents en mission. Décision (validée) : à garder comme référence marketing ET à transformer en histoire du soir — Alice et Sophie louent cette maison avec leurs parents. Reste à écrire."
-    },
-    {
-      "title": "Le Couple et la Quête Circulaire",
-      "rawNote": "Un couple ayant perdu un enfant s'invente une vie extraordinaire / se projette dans un futur lointain pour survivre à l'absence. Détachement total du matériel car \"plus rien n'a d'importance\" face à leur quête. Motif du couple \"soudé\" par l'errance — leur seule identité restante est celle de parents-chercheurs. Sophie pourrait croiser ces parents : soit elle est la projection de l'enfant qu'ils ont perdu, soit elle est la destination de leur voyage. Les affiches sur les murs deviennent des reliques sacrées plutôt que des outils de recherche.",
-      "analysis": "Mécanisme narratif : le deuil non résolu transformé en rituel perpétuel (la quête comme forme de déni). Pont temporel/générationnel possible avec Sophie. Piste à garder pour une histoire du soir distincte — attention à ne pas la confondre avec Benjamin et Clothilde (qui eux n'ont pas perdu d'enfant, juste tendance à l'abandon temporaire). Décision (validée) : c'est le même couple que « La Maison du Voyageur ». À transformer en nouvelle histoire dédiée où Sophie les croise. Reste à écrire."
-    },
-    {
-      "title": "Étrusque — piste catacombes CNRS",
-      "rawNote": "Lien entre runes et étrusque ? Alice et Sophie au CNRS, souterrain, catacombes. Personnage fou mais comique et maladroit.",
-      "analysis": "Piste de future histoire du soir (registre catacombes/mystère archéologique) avec un personnage comique-maladroit à inventer — pourrait servir de respiration plus légère entre deux histoires sombres, dans l'esprit du contraste déjà établi entre \"Anomalie magnifique\" (doux) et \"Le Bossu d'Argueil\" (sombre). Décision (validée) : à transformer en nouvelle histoire. Le personnage comique et maladroit travaille au CNRS, Alice et Sophie le croisent à l'intérieur des catacombes. Reste à écrire."
-    },
-    {
       "title": "Guide de style d'écriture — Pierre Millon",
       "rawNote": "Recette de style : varier la longueur des phrases (contemplatives puis courtes/percutantes), propositions juxtaposées par virgules, détails sensoriels précis. Débuts immersifs, pauses réflexives mélancoliques, répétitions douces et hypnotiques. Vocabulaire simple mais évocateur, adjectifs justes, tournures légèrement désuètes/poétiques. Personnages observateurs, rapport intime au temps qui s'étire. Dialogues sobres et rares. Atmosphère mélancolique, thèmes universels (solitude, temps, souvenirs), décors minimalistes mais symboliques. Fins en suspension, sur un dernier détail marquant plutôt qu'une résolution totale.",
       "analysis": "À appliquer systématiquement pour toute future rédaction ou retouche de texte dans l'univers Alice & Sophie, y compris par moi : privilégier la suggestion à l'exposition, ménager des fins ouvertes, alterner rythme long/court."
     },
     {
-      "title": "L'équipe de l'inventeur",
-      "rawNote": "Un membre de l'équipe d'un inventeur documente tout ce qu'il fait ; les filles s'en moquent un peu, préférant les gens qui réussissent directement — jusqu'à apprendre que c'est le même inventeur, et qu'il faut beaucoup d'échecs pour réussir une invention.",
-      "analysis": "Morale claire (l'échec comme chemin vers la réussite), contrepoint plus léger possible dans l'univers plutôt sombre de l'atelier. Décision (validée) : à transformer en nouvelle histoire à part entière. Reste à écrire."
-    },
-    {
       "title": "Formule narrative et recherche Bossu d'Argueil (note manquée)",
       "rawNote": "Titres : Le manoir lacustre, Le mas enterré, L'affection des Onges, Des hurlements dans la nuit, Trois holons, Frappées par la foudre. Formule : un lieu, un fou savant, une époque, une activité des filles et des parents, une astuce mathématique et de français cachée dans l'histoire. Recherche pour Le Bossu d'Argueil : Le Puy-en-Velay, le bossu torturé, début 1900, préservation du patrimoine gothique, habitat troglodyte. Deux autres notes courtes : « Histoire dans l'histoire » — le livre préféré des filles, qu'elles relisent pour se rassurer avec les contes ; et « Histoire des parents » — une histoire centrée sur le passé de Benjamin et Clothilde.",
-      "analysis": "C'est très probablement la source de la demande de grille des passages récurrents — je l'ai reconstruite sans l'avoir lue, ce qui explique l'oubli. Deux ajouts à faire : (1) la formule complète a 2 critères que ma grille n'avait pas — un « fou savant » et une astuce pédagogique cachée (maths/français) — aucune histoire actuelle n'en a, à intégrer dans une prochaine ; (2) incohérence de lieu à noter : cette note situe Le Bossu d'Argueil au Puy-en-Velay, mais le texte publié mentionne Bagnères-de-Bigorre — les deux sont des vraies villes différentes (Haute-Loire vs Hautes-Pyrénées), à clarifier. Titres ajoutés au réservoir. « Histoire dans l'histoire » et « Histoire des parents » ajoutées comme pistes de nouvelles histoires."
-    },
-    {
-      "title": "Histoire dans l'histoire",
-      "rawNote": "Le livre préféré des filles, qu'elles relisent pour se rassurer avec les contes.",
-      "analysis": "Piste de nouvelle histoire (ou dispositif narratif à réutiliser) — reste à écrire."
-    },
-    {
-      "title": "Histoire des parents",
-      "rawNote": "Une histoire centrée sur le passé de Benjamin et Clothilde.",
-      "analysis": "Piste de nouvelle histoire — reste à écrire."
+      "analysis": "C'est très probablement la source de la demande de grille des passages récurrents — je l'ai reconstruite sans l'avoir lue, ce qui explique l'oubli. La formule complète a 2 critères que ma grille n'avait pas — un « fou savant » et une astuce pédagogique cachée (maths/français) — aucune histoire actuelle n'en a, à intégrer dans une prochaine. Titres ajoutés au réservoir. « Histoire dans l'histoire » et « Histoire des parents » ont été transformées en histoires (voir Histoires). Lieu du Bossu d'Argueil : Bagnères-de-Bigorre est un nom provisoire, une vraie ville sera choisie plus tard."
     }
   ],
   "structureNotes": [
