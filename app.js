@@ -128,50 +128,51 @@ function initCharacterSheets(sheets) {
   route();
 }
 
-function initEveningStories(stories) {
-  const container = document.getElementById("evening-stories-app");
+function initTextCollection(containerId, items, options) {
+  const { hashPrefix, sectionHash, backLabel } = options;
+  const container = document.getElementById(containerId);
 
-  if (!stories || stories.length === 0) {
+  if (!items || items.length === 0) {
     container.innerHTML = '<p class="empty-state">Rien à afficher pour le moment.</p>';
     return;
   }
 
   function showList() {
-    container.innerHTML = `<ul class="evening-list">${stories
-      .map((story, index) => `
+    container.innerHTML = `<ul class="evening-list">${items
+      .map((item, index) => `
         <li class="evening-preview" data-index="${index}">
-          <h3>${escapeHtml(story.title ?? "Sans titre")}</h3>
-          ${story.note ? `<p class="evening-note">${escapeHtml(story.note)}</p>` : ""}
-          ${story.warning ? `<p class="evening-warning">⚠️ ${escapeHtml(story.warning)}</p>` : ""}
+          <h3>${escapeHtml(item.title ?? "Sans titre")}</h3>
+          ${item.note ? `<p class="evening-note">${escapeHtml(item.note)}</p>` : ""}
+          ${item.warning ? `<p class="evening-warning">⚠️ ${escapeHtml(item.warning)}</p>` : ""}
           <span class="evening-read-link">Lire le texte complet →</span>
         </li>`)
       .join("")}</ul>`;
 
     container.querySelectorAll(".evening-preview").forEach((el) => {
       el.addEventListener("click", () => {
-        window.location.hash = `evening-${el.dataset.index}`;
+        window.location.hash = `${hashPrefix}-${el.dataset.index}`;
       });
     });
   }
 
   function showDetail(index) {
-    const story = stories[index];
-    if (!story) {
+    const item = items[index];
+    if (!item) {
       showList();
       return;
     }
     container.innerHTML = `
       <div class="evening-detail">
-        <a href="#evening-stories" class="evening-back">← Retour aux histoires du soir</a>
-        <h3>${escapeHtml(story.title ?? "Sans titre")}</h3>
-        ${story.note ? `<p class="evening-note">${escapeHtml(story.note)}</p>` : ""}
-        ${story.warning ? `<p class="evening-warning">⚠️ ${escapeHtml(story.warning)}</p>` : ""}
-        <div class="evening-content">${renderParagraphs(story.content)}</div>
+        <a href="#${sectionHash}" class="evening-back">← ${escapeHtml(backLabel)}</a>
+        <h3>${escapeHtml(item.title ?? "Sans titre")}</h3>
+        ${item.note ? `<p class="evening-note">${escapeHtml(item.note)}</p>` : ""}
+        ${item.warning ? `<p class="evening-warning">⚠️ ${escapeHtml(item.warning)}</p>` : ""}
+        <div class="evening-content">${renderParagraphs(item.content)}</div>
       </div>`;
   }
 
   function route() {
-    const match = window.location.hash.match(/^#evening-(\d+)$/);
+    const match = window.location.hash.match(new RegExp(`^#${hashPrefix}-(\\d+)$`));
     if (match) {
       showDetail(Number(match[1]));
     } else {
@@ -189,7 +190,16 @@ loadData()
     initCharacterSheets(data.characterSheets);
     renderList("architecture-notes-list", data.architectureNotes, renderArchitectureNote);
     renderList("structure-notes-list", data.structureNotes, renderStructureNote);
-    initEveningStories(data.eveningStories);
+    initTextCollection("evening-stories-app", data.eveningStories, {
+      hashPrefix: "evening",
+      sectionHash: "evening-stories",
+      backLabel: "Retour aux histoires du soir",
+    });
+    initTextCollection("alice-fugues-app", data.aliceFugues, {
+      hashPrefix: "fugue",
+      sectionHash: "alice-fugues",
+      backLabel: "Retour aux Fugues d'Alice",
+    });
   })
   .catch((error) => {
     console.error("Impossible de charger data.json :", error);
