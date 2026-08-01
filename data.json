@@ -341,6 +341,21 @@
       "title": "L'équipe de l'inventeur",
       "rawNote": "Un membre de l'équipe d'un inventeur documente tout ce qu'il fait ; les filles s'en moquent un peu, préférant les gens qui réussissent directement — jusqu'à apprendre que c'est le même inventeur, et qu'il faut beaucoup d'échecs pour réussir une invention.",
       "analysis": "Morale claire (l'échec comme chemin vers la réussite), contrepoint plus léger possible dans l'univers plutôt sombre de l'atelier. Décision (validée) : à transformer en nouvelle histoire à part entière. Reste à écrire."
+    },
+    {
+      "title": "Formule narrative et recherche Bossu d'Argueil (note manquée)",
+      "rawNote": "Titres : Le manoir lacustre, Le mas enterré, L'affection des Onges, Des hurlements dans la nuit, Trois holons, Frappées par la foudre. Formule : un lieu, un fou savant, une époque, une activité des filles et des parents, une astuce mathématique et de français cachée dans l'histoire. Recherche pour Le Bossu d'Argueil : Le Puy-en-Velay, le bossu torturé, début 1900, préservation du patrimoine gothique, habitat troglodyte. Deux autres notes courtes : « Histoire dans l'histoire » — le livre préféré des filles, qu'elles relisent pour se rassurer avec les contes ; et « Histoire des parents » — une histoire centrée sur le passé de Benjamin et Clothilde.",
+      "analysis": "C'est très probablement la source de la demande de grille des passages récurrents — je l'ai reconstruite sans l'avoir lue, ce qui explique l'oubli. Deux ajouts à faire : (1) la formule complète a 2 critères que ma grille n'avait pas — un « fou savant » et une astuce pédagogique cachée (maths/français) — aucune histoire actuelle n'en a, à intégrer dans une prochaine ; (2) incohérence de lieu à noter : cette note situe Le Bossu d'Argueil au Puy-en-Velay, mais le texte publié mentionne Bagnères-de-Bigorre — les deux sont des vraies villes différentes (Haute-Loire vs Hautes-Pyrénées), à clarifier. Titres ajoutés au réservoir. « Histoire dans l'histoire » et « Histoire des parents » ajoutées comme pistes de nouvelles histoires."
+    },
+    {
+      "title": "Histoire dans l'histoire",
+      "rawNote": "Le livre préféré des filles, qu'elles relisent pour se rassurer avec les contes.",
+      "analysis": "Piste de nouvelle histoire (ou dispositif narratif à réutiliser) — reste à écrire."
+    },
+    {
+      "title": "Histoire des parents",
+      "rawNote": "Une histoire centrée sur le passé de Benjamin et Clothilde.",
+      "analysis": "Piste de nouvelle histoire — reste à écrire."
     }
   ],
   "structureNotes": [
@@ -374,7 +389,8 @@
         "Le Cercueil des Ombres · Les Échos du Néant · L'Enfant sans Visage · Les Sœurs Abysse · La Couronne des Cendres · Le Pardon des Anges Noirs · Les Fils du Silence · La Nuit Mangeuse · L'Œil des Profondeurs · Le Sang des Lilas",
         "Les Murmures de l'Autre Rive · Le Serment des Mains Blanches · L'Étreinte des Limbes · La Voix des Oubliés · Les Cendres Éternelles · Le Rire de l'Abîme · Les Racines du Vide · L'Aube Carnassière · La Chair du Souvenir · Les Larmes Nocturnes",
         "Le Chant Silencieux des Cendres · Les Ombres du Berceau · Les Larmes Blanches d'Élise · L'Étreinte des Mains Perdues · La Danse Sombre des Sœurs Frêles · Le Voile Rouge de l'Enfance · Les Murmures du Crépuscule · L'Innocence Brisée des Lys · Le Sang des Échos Lointains · Les Filles du Silence Éternel",
-        "La Douleur des Ombres Fidèles · L'Éclat Noir des Âmes Jumelles · Le Rire des Étoiles Brisées · Les Pleurs Secrets de la Nuit · Le Rythme Lent des Pendules Oubliées · L'Appel Noir des Sœurs Disparues · Les Ombres Saignantes de l'Aube · Le Souffle Glacé des Rêves · Le Jardin Perdu des Nuits Bleues · Les Cicatrices Invisibles des Ombres"
+        "La Douleur des Ombres Fidèles · L'Éclat Noir des Âmes Jumelles · Le Rire des Étoiles Brisées · Les Pleurs Secrets de la Nuit · Le Rythme Lent des Pendules Oubliées · L'Appel Noir des Sœurs Disparues · Les Ombres Saignantes de l'Aube · Le Souffle Glacé des Rêves · Le Jardin Perdu des Nuits Bleues · Les Cicatrices Invisibles des Ombres",
+        "Le manoir lacustre · Le mas enterré · L'affection des Onges · Des hurlements dans la nuit · Trois holons · Frappées par la foudre"
       ],
       "attentionPoints": [
         "Aucun de ces titres n'inspire de piste immédiate pour l'instant — à ressortir plus tard quand une histoire correspondra à l'ambiance."
@@ -382,7 +398,7 @@
     }
   ],
   "seriesChecklist": {
-    "intro": "Passages récurrents observés dans les histoires (inspiré de la structure \"Chair de poule\") — utile pour repérer ce qui manque avant de publier une nouvelle histoire.",
+    "intro": "Passages récurrents observés dans les histoires (inspiré de la structure \"Chair de poule\") — utile pour repérer ce qui manque avant de publier une nouvelle histoire. Deux critères ajoutés d'après une note retrouvée tardivement (fou savant, astuce pédagogique cachée) — aucune histoire actuelle ne les a encore.",
     "criteria": [
       {
         "key": "parents",
@@ -415,6 +431,18 @@
       {
         "key": "fantastique",
         "label": "Élément fantastique explicite"
+      },
+      {
+        "key": "fou_savant",
+        "label": "Un « fou savant » / génie excentrique"
+      },
+      {
+        "key": "astuce",
+        "label": "Astuce pédagogique cachée (maths/français)"
+      },
+      {
+        "key": "activite",
+        "label": "Activité commune filles + parents"
       }
     ],
     "rows": [
@@ -428,7 +456,10 @@
           "meteo": false,
           "duo": true,
           "suspens": true,
-          "fantastique": false
+          "fantastique": false,
+          "fou_savant": false,
+          "astuce": false,
+          "activite": false
         }
       },
       {
@@ -441,7 +472,10 @@
           "meteo": true,
           "duo": true,
           "suspens": true,
-          "fantastique": false
+          "fantastique": false,
+          "fou_savant": false,
+          "astuce": false,
+          "activite": false
         }
       },
       {
@@ -454,7 +488,10 @@
           "meteo": false,
           "duo": false,
           "suspens": true,
-          "fantastique": true
+          "fantastique": true,
+          "fou_savant": false,
+          "astuce": false,
+          "activite": false
         }
       },
       {
@@ -467,7 +504,10 @@
           "meteo": true,
           "duo": false,
           "suspens": false,
-          "fantastique": true
+          "fantastique": true,
+          "fou_savant": false,
+          "astuce": false,
+          "activite": false
         }
       },
       {
@@ -480,7 +520,10 @@
           "meteo": true,
           "duo": false,
           "suspens": false,
-          "fantastique": true
+          "fantastique": true,
+          "fou_savant": false,
+          "astuce": false,
+          "activite": false
         }
       }
     ]
@@ -605,6 +648,44 @@
         3,
         2
       ]
+    }
+  ],
+  "pendingWork": [
+    {
+      "title": "Écrire « La Maison du Voyageur » (Alice et Sophie la louent avec leurs parents)",
+      "done": false
+    },
+    {
+      "title": "Écrire « Le Couple et la Quête Circulaire » (Sophie croise le couple en deuil)",
+      "done": false
+    },
+    {
+      "title": "Écrire « L'équipe de l'inventeur »",
+      "done": false
+    },
+    {
+      "title": "Écrire « Étrusque » (catacombes CNRS)",
+      "done": false
+    },
+    {
+      "title": "Écrire « Histoire dans l'histoire » (le livre préféré des filles)",
+      "done": false
+    },
+    {
+      "title": "Écrire « Histoire des parents » (passé de Benjamin et Clothilde)",
+      "done": false
+    },
+    {
+      "title": "Clarifier le lieu du Bossu d'Argueil : Le Puy-en-Velay (note de recherche) ou Bagnères-de-Bigorre (texte publié) ?",
+      "done": false
+    },
+    {
+      "title": "Intégrer un « fou savant » et une astuce pédagogique cachée (maths/français) dans une future histoire",
+      "done": false
+    },
+    {
+      "title": "Confirmer que Maëlle a bien été ajoutée comme collaboratrice GitHub (Write)",
+      "done": false
     }
   ]
 }
