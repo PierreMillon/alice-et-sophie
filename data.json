@@ -286,11 +286,6 @@
       "analysis": "Mécanisme narratif : le deuil non résolu transformé en rituel perpétuel (la quête comme forme de déni). Pont temporel/générationnel possible avec Sophie. Piste à garder pour une histoire du soir distincte — attention à ne pas la confondre avec Benjamin et Clothilde (qui eux n'ont pas perdu d'enfant, juste tendance à l'abandon temporaire). Décision (validée) : c'est le même couple que « La Maison du Voyageur ». À transformer en nouvelle histoire dédiée où Sophie les croise. Reste à écrire."
     },
     {
-      "title": "Titres et fragment de personnage — l'équipe de l'inventeur",
-      "rawNote": "Listes de titres sombres (Le Cercueil des Ombres, L'Affection Noire des Onges, Les Sœurs Abysse, etc.) dans l'esprit horreur/gothique. Fragment de personnage : un membre de l'équipe d'un inventeur qui documente tout ce qu'il fait ; les filles s'en moquent un peu, préférant les gens qui réussissent directement — jusqu'à apprendre que c'est le même inventeur, et qu'il faut beaucoup d'échecs pour réussir une invention.",
-      "analysis": "Le fragment de personnage porte une morale claire (l'échec comme chemin vers la réussite) qui contraste avec le ton horreur des titres — pourrait être un contrepoint plus léger dans une histoire, ou une sous-intrigue pédagogique dans une histoire du soir par ailleurs sombre. Titres à réserver comme réservoir pour de futures histoires du soir."
-    },
-    {
       "title": "Étrusque — piste catacombes CNRS",
       "rawNote": "Lien entre runes et étrusque ? Alice et Sophie au CNRS, souterrain, catacombes. Personnage fou mais comique et maladroit.",
       "analysis": "Piste de future histoire du soir (registre catacombes/mystère archéologique) avec un personnage comique-maladroit à inventer — pourrait servir de respiration plus légère entre deux histoires sombres, dans l'esprit du contraste déjà établi entre \"Anomalie magnifique\" (doux) et \"Le Bossu d'Argueil\" (sombre)."
@@ -304,6 +299,11 @@
       "title": "Les Rêves Légendaires (2017, v1.0) — texte d'origine, hors continuité",
       "rawNote": "Texte de 2017 mettant en scène un \"Alice\" masculin (pronoms \"il\"), dans un village hivernal onirique, qui disparaît une nuit en poursuivant un rêve/visage. Aucun lien de personnages, d'époque ou de lieu avec l'atelier actuel.",
       "analysis": "Antériorité intéressante mais probablement sans lien de continuité avec les Alice et Sophie actuelles (7 et 9 ans, sœurs, entre-deux-guerres) — le nom \"Alice\" semble avoir été réutilisé plus tard pour un personnage complètement différent. Conservé comme archive/origine du nom, pas comme canon."
+    },
+    {
+      "title": "L'équipe de l'inventeur",
+      "rawNote": "Un membre de l'équipe d'un inventeur documente tout ce qu'il fait ; les filles s'en moquent un peu, préférant les gens qui réussissent directement — jusqu'à apprendre que c'est le même inventeur, et qu'il faut beaucoup d'échecs pour réussir une invention.",
+      "analysis": "Morale claire (l'échec comme chemin vers la réussite), contrepoint plus léger possible dans l'univers plutôt sombre de l'atelier. Décision (validée) : à transformer en nouvelle histoire à part entière. Reste à écrire."
     }
   ],
   "structureNotes": [
@@ -329,6 +329,18 @@
       "attentionPoints": [
         "Grille à appliquer avant de publier une nouvelle histoire du soir : est-ce que le protagoniste change réellement d'état (physique ou psychologique) entre le début et la fin ?",
         "Question laissée ouverte par la note d'origine : quel est le « Gardien du Seuil » (obstacle majeur) pour chaque personnage de l'atelier ? Pas encore défini pour Alice, Sophie, ou les autres."
+      ]
+    },
+    {
+      "title": "Réservoir de titres sombres",
+      "keyPoints": [
+        "Le Cercueil des Ombres · Les Échos du Néant · L'Enfant sans Visage · Les Sœurs Abysse · La Couronne des Cendres · Le Pardon des Anges Noirs · Les Fils du Silence · La Nuit Mangeuse · L'Œil des Profondeurs · Le Sang des Lilas",
+        "Les Murmures de l'Autre Rive · Le Serment des Mains Blanches · L'Étreinte des Limbes · La Voix des Oubliés · Les Cendres Éternelles · Le Rire de l'Abîme · Les Racines du Vide · L'Aube Carnassière · La Chair du Souvenir · Les Larmes Nocturnes",
+        "Le Chant Silencieux des Cendres · Les Ombres du Berceau · Les Larmes Blanches d'Élise · L'Étreinte des Mains Perdues · La Danse Sombre des Sœurs Frêles · Le Voile Rouge de l'Enfance · Les Murmures du Crépuscule · L'Innocence Brisée des Lys · Le Sang des Échos Lointains · Les Filles du Silence Éternel",
+        "La Douleur des Ombres Fidèles · L'Éclat Noir des Âmes Jumelles · Le Rire des Étoiles Brisées · Les Pleurs Secrets de la Nuit · Le Rythme Lent des Pendules Oubliées · L'Appel Noir des Sœurs Disparues · Les Ombres Saignantes de l'Aube · Le Souffle Glacé des Rêves · Le Jardin Perdu des Nuits Bleues · Les Cicatrices Invisibles des Ombres"
+      ],
+      "attentionPoints": [
+        "Aucun de ces titres n'inspire de piste immédiate pour l'instant — à ressortir plus tard quand une histoire correspondra à l'ambiance."
       ]
     }
   ]
