@@ -143,6 +143,17 @@
         "Maria",
         "Cripure (professeur de philosophie)"
       ]
+    },
+    {
+      "title": "L'amour du soleil",
+      "tone": "🌙 Sombre",
+      "note": "Brouillon inachevé — s'arrête avant le chapitre 3 (« Un puzzle interminable »), envoyé partiellement. Les parents sont ici nommés Sarah et Franck, alors que Clothilde et Benjamin sont établis ailleurs sur le site — à clarifier avec l'auteur.",
+      "content": "Chapitre 1 : Les voyages c'est fini\n\nSarah avait décidé de ne plus sortir du lit. La mère d'Alice et Sophie était trop fatiguée par ces derniers voyages. Elle ne voulait plus repartir. Elle souhaitait seulement passer du temps avec ses deux filles et son mari. C'est pour cela qu'ils s'étaient enfin arrêtés dans un lieu reculé, où aucune aventure ne les entraînerait.\n\nC'était une longue journée d'été. Il était 10 h du matin, et elle ne sortirait pas de son lit. Elle n'ouvrit même pas les yeux pour chercher son mari ou le supplier de lui amener un copieux petit déjeuner sur place. Il devait déjà être en bas. À cette idée, elle se rendormit.\n\nIl était 15 h quand elle émergea tranquillement et rejoignit sa famille, occupée à faire un puzzle sur une grande table de fortune. Celle-ci était fabriquée avec un mélange de tréteaux, de planches de bois et de vieux calendriers en carton, sous le grand chêne de la cour. Ils avaient décidé de passer l'été dans la maison des parents de Franck, le père d'Alice et Sophie.\n\nIl y avait une sorte de légitimité agréable à retourner dans un lieu qui avait appartenu à leur famille. Mais surtout, le principal atout de ce lieu était qu'il n'y avait absolument aucun mystère, ni aucune aventure dans la région. Cette idée avait rassuré les filles, qui avaient accepté de voyager une dernière fois, vers une nouvelle destination, puisque ce serait la dernière.\n\nEn effet, face aux protestations régulières de leurs enfants, les parents leur avaient promis de se sédentariser et de leur offrir une vie classique et calme, avec une inscription dans une école locale. Elles pourraient ainsi se faire des amis et créer une vie de routine, loin des aventures dangereuses qu'elles avaient connues les dernières années.\n\nAutant vous dire tout de suite, lecteur, ce rêve ne se réalisera pas dans les prochaines pages. Il est fortement probable que l'aventure qui va suivre vous donnera des maux de ventre et que vous ne verrez plus jamais les forêts mystérieuses de la même façon. Vous chercherez même peut-être à les éviter pour le restant de votre vie. J'en suis réellement navré, et, comme vous, j'aurais aimé que les filles puissent enfin profiter d'un repos mérité…\n\nChapitre 2 : Une odeur dégueulasse\n\nLa maison dans laquelle les filles se trouvaient avait une histoire particulière. Au début des années 1600, elle avait été la maison du gardien d'une famille locale qui possédait beaucoup de terres. Aujourd'hui, la maison et le petit terrain qui l'entouraient avaient été vendus à la famille Millena.\n\nIl n'y avait plus aucun lien entre les propriétaires du château et la maison du gardien, comme on l'appelait encore. Aucun lien… ou peut-être un seul : la route qui passait du village le plus proche au château. Elle traversait l'ancienne grille, toujours ouverte, et longeait la maison de la famille Millena, située sur le côté.\n\nHeureusement, cette route n'était jamais dérangée par qui que ce soit. L'actuel propriétaire du château, un vieil homme reclus, vivait seul avec une vieille servante qui empruntait un chemin à travers la forêt pour faire les courses une fois par semaine.\n\nLa grande route qui passait devant la maison du gardien — ou, comme nous devrions dire aujourd'hui, la maison de la famille Millena, ou la maison des filles — était donc totalement dédiée aux jeux et aventures d'Alice et Sophie. C'était pour elles un espace de rêve où tout semblait possible.\n\nElles parvenaient à se projeter à des époques anciennes, où des calèches et des postiers à cheval empruntaient cette large route, aujourd'hui gravillonnée, mais autrefois en simple terre battue. Cette route, qui s'étirait à perte de vue à travers la forêt, était un terrain de jeux sans limite pour les filles.\n\nÀ vrai dire, c'était parfait. Bien qu'elles aspiraient à une tranquillité méritée, leur caractère, définitivement celui d'aventurières, ne leur permettait pas de rester en place très longtemps.\n\nElle avaient déjà d'ailleurs arpenté à pied la grand-route du village jusqu'au château. Mais bien qu'elle fut libre de s'y déplacer à loisir, elle trouvait que les émanations olfactives du château leur faisaient tourner la tête. En effet, il était recouvert d'un vieux lierre poisseux, le propriétaire, n'ayant sûrement pas les moyens d'engager un jardinier. Cette odeur âcre contrastait fortement avec la douce odeur de l'humus et du pétrichor qui embaumaient constamment les sous-bois. Elle n'avait donc pas prêté plus longtemps. Attention à cette vieille bâtisse. Et de toute façon leurs esprits occultaient toute invitation à l'aventure et au mystère. Elle n'auraient donc jamais pu imaginer la terrible vie qui se cachait derrière.",
+      "characters": [
+        "Alice",
+        "Sophie",
+        "Le vieil homme du château (fusionné au lierre)"
+      ]
     }
   ],
   "characterSheets": [
@@ -478,6 +489,33 @@
       "flags": [
         {
           "text": "Son discours final retourne contre les élèves leurs moqueries sur son physique — sans jamais justifier ce qu'il s'apprête à leur faire subir."
+        }
+      ],
+      "recurring": false
+    },
+    {
+      "name": "Le vieil homme du château (fusionné au lierre)",
+      "role": "Antagoniste annoncé de « L'amour du soleil » — propriétaire reclus du château voisin",
+      "portrait": "portraits/homme_lierre.png",
+      "traits": [
+        "A fusionné physiquement avec le lierre qui recouvre le château — annoncé par l'auteur, pas encore montré dans le texte publié",
+        "Fasciné par l'Égypte antique, le dieu soleil et les romans de Christian Jacq",
+        "Vit reclus, seul avec une vieille servante qui sort une fois par semaine pour les courses",
+        "Doit mourir avant la fin de l'histoire, selon les notes de l'auteur"
+      ],
+      "examples": [
+        {
+          "quote": "L'actuel propriétaire du château, un vieil homme reclus, vivait seul avec une vieille servante.",
+          "source": "L'amour du soleil"
+        },
+        {
+          "quote": "Il était recouvert d'un vieux lierre poisseux, le propriétaire, n'ayant sûrement pas les moyens d'engager un jardinier.",
+          "source": "L'amour du soleil"
+        }
+      ],
+      "flags": [
+        {
+          "text": "Personnage annoncé dans les notes de l'auteur mais pas encore nommé ni montré directement dans les deux premiers chapitres publiés — seuls le château couvert de lierre et son propriétaire reclus sont évoqués pour l'instant."
         }
       ],
       "recurring": false
