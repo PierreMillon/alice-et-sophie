@@ -243,15 +243,8 @@ loadData()
       backLabel: "Retour aux histoires",
       characterSheets: data.characterSheets,
     });
-    initTextCollection("alice-fugues-app", data.aliceFugues, {
-      hashPrefix: "fugue",
-      sectionHash: "alice-fugues",
-      backLabel: "Retour aux Fugues d'Alice",
-      characterSheets: data.characterSheets,
-    });
     initCharacterSheets(data.characterSheets, [
       { items: data.stories, hashPrefix: "story" },
-      { items: data.aliceFugues, hashPrefix: "fugue" },
     ]);
     renderList("architecture-notes-list", data.architectureNotes, renderArchitectureNote);
     renderList("structure-notes-list", data.structureNotes, renderStructureNote);

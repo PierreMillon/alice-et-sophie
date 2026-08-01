@@ -401,18 +401,12 @@ section h2 {
   margin: 0 0 0.5rem;
 }
 
-.fugues-section {
-  background-color: #241a3d;
-}
-
 .stories-section {
   background-color: #3a2418;
 }
 
-.structure-heading {
-  margin-top: 2.5rem;
-  font-size: 1.3rem;
-  color: var(--color-black);
+.structure-section {
+  background-color: #ffe3d5;
 }
 
 .structure-list {
