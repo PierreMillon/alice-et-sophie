@@ -34,13 +34,6 @@ function scrollSectionIntoView(container) {
   section.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-function renderPendingItem(item) {
-  return `<li class="pending-item ${item.done ? "pending-done" : ""}">
-    <span class="pending-box">${item.done ? "☑" : "☐"}</span>
-    <span>${escapeHtml(item.title ?? "")}</span>
-  </li>`;
-}
-
 function renderArchitectureNote(note) {
   return `<li class="architecture-card">
     <h3>${escapeHtml(note.title ?? "Sans titre")}</h3>
@@ -312,7 +305,6 @@ loadData()
     initCharacterSheets(data.characterSheets, [
       { items: data.stories, hashPrefix: "story" },
     ]);
-    renderList("pending-work-list", data.pendingWork, renderPendingItem);
     renderList("architecture-notes-list", data.architectureNotes, renderArchitectureNote);
     renderList("structure-notes-list", data.structureNotes, renderStructureNote);
     renderSeriesChecklist(data.seriesChecklist);

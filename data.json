@@ -360,6 +360,22 @@
   ],
   "structureNotes": [
     {
+      "title": "La structure d'un « Alice et Sophie »",
+      "keyPoints": [
+        "Un lieu isolé et bien identifié (village, maison, forêt) qui devient presque un personnage",
+        "Un faux méchant : une figure qui semble menaçante mais s'avère innocente (ex. le bossu)",
+        "Un vrai méchant : l'antagoniste réel, souvent caché derrière une façade sociale (ex. le boucher)",
+        "Un fou savant ou génie excentrique qui pose une énigme ou détient un savoir à part",
+        "Une astuce pédagogique cachée dans le texte (une notion de maths ou de français glissée dans l'histoire)",
+        "Une activité commune aux filles et aux parents, souvent interrompue par le départ de ces derniers",
+        "Une saison ou une météo marquée qui installe l'ambiance",
+        "Une fin en suspension plutôt qu'une résolution complète"
+      ],
+      "attentionPoints": [
+        "Formule reconstituée à partir d'une note d'origine — à confirmer/affiner au fil des prochaines histoires plutôt qu'à figer maintenant"
+      ]
+    },
+    {
       "title": "Les Enquêteurs de l'Étrange — récits emboîtés",
       "keyPoints": [
         "Le fantastique peut être vécu en direct par Alice/Sophie OU médiatisé : journaux découpés et analysés, livres méta (les personnages lisent ce que le lecteur lit), tradition orale (histoire racontée par un parent)",
@@ -398,7 +414,7 @@
     }
   ],
   "seriesChecklist": {
-    "intro": "Passages récurrents observés dans les histoires (inspiré de la structure \"Chair de poule\") — utile pour repérer ce qui manque avant de publier une nouvelle histoire. Deux critères ajoutés d'après une note retrouvée tardivement (fou savant, astuce pédagogique cachée) — aucune histoire actuelle ne les a encore.",
+    "intro": "Passages récurrents observés dans les histoires (inspiré de la structure \"Chair de poule\") — utile pour repérer ce qui manque avant de publier une nouvelle histoire. Aucune histoire actuelle n'a encore de fou savant ni d'astuce pédagogique cachée.",
     "criteria": [
       {
         "key": "parents",
@@ -409,8 +425,12 @@
         "label": "Lieu isolé bien identifié"
       },
       {
-        "key": "figure",
-        "label": "Figure adulte ambiguë"
+        "key": "faux_mechant",
+        "label": "Un faux méchant (suspect qui s'avère innocent)"
+      },
+      {
+        "key": "vrai_mechant",
+        "label": "Un vrai méchant (l'antagoniste réel)"
       },
       {
         "key": "enigme",
@@ -451,7 +471,6 @@
         "checks": {
           "parents": true,
           "lieu": true,
-          "figure": true,
           "enigme": true,
           "meteo": false,
           "duo": true,
@@ -459,7 +478,9 @@
           "fantastique": false,
           "fou_savant": false,
           "astuce": false,
-          "activite": false
+          "activite": false,
+          "faux_mechant": true,
+          "vrai_mechant": true
         }
       },
       {
@@ -467,7 +488,6 @@
         "checks": {
           "parents": true,
           "lieu": true,
-          "figure": true,
           "enigme": true,
           "meteo": true,
           "duo": true,
@@ -475,7 +495,9 @@
           "fantastique": false,
           "fou_savant": false,
           "astuce": false,
-          "activite": false
+          "activite": false,
+          "faux_mechant": true,
+          "vrai_mechant": false
         }
       },
       {
@@ -483,7 +505,6 @@
         "checks": {
           "parents": false,
           "lieu": true,
-          "figure": false,
           "enigme": true,
           "meteo": false,
           "duo": false,
@@ -491,7 +512,9 @@
           "fantastique": true,
           "fou_savant": false,
           "astuce": false,
-          "activite": false
+          "activite": false,
+          "faux_mechant": false,
+          "vrai_mechant": false
         }
       },
       {
@@ -499,7 +522,6 @@
         "checks": {
           "parents": false,
           "lieu": true,
-          "figure": false,
           "enigme": false,
           "meteo": true,
           "duo": false,
@@ -507,7 +529,9 @@
           "fantastique": true,
           "fou_savant": false,
           "astuce": false,
-          "activite": false
+          "activite": false,
+          "faux_mechant": false,
+          "vrai_mechant": false
         }
       },
       {
@@ -515,7 +539,6 @@
         "checks": {
           "parents": false,
           "lieu": true,
-          "figure": false,
           "enigme": false,
           "meteo": true,
           "duo": false,
@@ -523,7 +546,9 @@
           "fantastique": true,
           "fou_savant": false,
           "astuce": false,
-          "activite": false
+          "activite": false,
+          "faux_mechant": false,
+          "vrai_mechant": false
         }
       }
     ]
@@ -648,44 +673,6 @@
         3,
         2
       ]
-    }
-  ],
-  "pendingWork": [
-    {
-      "title": "Écrire « La Maison du Voyageur » (Alice et Sophie la louent avec leurs parents)",
-      "done": false
-    },
-    {
-      "title": "Écrire « Le Couple et la Quête Circulaire » (Sophie croise le couple en deuil)",
-      "done": false
-    },
-    {
-      "title": "Écrire « L'équipe de l'inventeur »",
-      "done": false
-    },
-    {
-      "title": "Écrire « Étrusque » (catacombes CNRS)",
-      "done": false
-    },
-    {
-      "title": "Écrire « Histoire dans l'histoire » (le livre préféré des filles)",
-      "done": false
-    },
-    {
-      "title": "Écrire « Histoire des parents » (passé de Benjamin et Clothilde)",
-      "done": false
-    },
-    {
-      "title": "Clarifier le lieu du Bossu d'Argueil : Le Puy-en-Velay (note de recherche) ou Bagnères-de-Bigorre (texte publié) ?",
-      "done": false
-    },
-    {
-      "title": "Intégrer un « fou savant » et une astuce pédagogique cachée (maths/français) dans une future histoire",
-      "done": false
-    },
-    {
-      "title": "Confirmer que Maëlle a bien été ajoutée comme collaboratrice GitHub (Write)",
-      "done": false
     }
   ]
 }
