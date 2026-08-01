@@ -18,10 +18,6 @@ function renderList(containerId, items, renderItem) {
   container.innerHTML = items.map(renderItem).join("");
 }
 
-function renderStory(story) {
-  return `<li><h3>${escapeHtml(story.title ?? "Sans titre")}</h3><p>${escapeHtml(story.summary ?? "")}</p></li>`;
-}
-
 function withInlineFlags(escapedText) {
   return escapedText.replace(/\[\[flag:(.*?)\]\]/g, '<span class="text-flag">⚠️ $1</span>');
 }
@@ -186,7 +182,11 @@ function initTextCollection(containerId, items, options) {
 
 loadData()
   .then((data) => {
-    renderList("stories-list", data.stories, renderStory);
+    initTextCollection("stories-app", data.stories, {
+      hashPrefix: "story",
+      sectionHash: "stories",
+      backLabel: "Retour aux histoires",
+    });
     initCharacterSheets(data.characterSheets);
     renderList("architecture-notes-list", data.architectureNotes, renderArchitectureNote);
     renderList("structure-notes-list", data.structureNotes, renderStructureNote);
