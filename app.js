@@ -82,7 +82,8 @@ function renderSeriesChecklist(checklist) {
     </div>`;
 }
 
-function renderTensionChart(curve) {
+function renderTensionChart(curve, options) {
+  const { showTitle = true, showAvis = true } = options ?? {};
   const w = 280;
   const h = 90;
   const pad = 8;
@@ -91,26 +92,35 @@ function renderTensionChart(curve) {
     { key: "peur", cls: "tension-peur" },
     { key: "surprise", cls: "tension-surprise" },
     { key: "nouveaute", cls: "tension-nouveaute" },
+    { key: "rythme", cls: "tension-rythme" },
   ];
   const n = curve.peur.length;
   const stepX = n > 1 ? (w - pad * 2) / (n - 1) : 0;
 
   function points(arr) {
-    return arr.map((v, i) => `${pad + i * stepX},${h - pad - (v / maxVal) * (h - pad * 2)}`).join(" ");
+    return (arr ?? []).map((v, i) => `${pad + i * stepX},${h - pad - (v / maxVal) * (h - pad * 2)}`).join(" ");
   }
 
   const lines = series
+    .filter((s) => curve[s.key])
     .map((s) => `<polyline points="${points(curve[s.key])}" class="tension-line ${s.cls}" />`)
     .join("");
 
+  const cliffhanger = curve.cliffhanger != null
+    ? `<p class="tension-cliffhanger">Cliffhanger de fin : ${"🔥".repeat(curve.cliffhanger)}${"·".repeat(Math.max(0, 5 - curve.cliffhanger))}</p>`
+    : "";
+
   return `<div class="tension-chart">
-    <p class="tension-title">${escapeHtml(curve.story ?? "")}</p>
+    ${showTitle ? `<p class="tension-title">${escapeHtml(curve.story ?? "")}</p>` : ""}
     <svg viewBox="0 0 ${w} ${h}" class="tension-svg" preserveAspectRatio="none">${lines}</svg>
     <div class="tension-legend">
       <span class="legend-dot tension-peur"></span>Peur
       <span class="legend-dot tension-surprise"></span>Surprise
       <span class="legend-dot tension-nouveaute"></span>Nouveauté
+      <span class="legend-dot tension-rythme"></span>Rythme
     </div>
+    ${cliffhanger}
+    ${showAvis && curve.avis ? `<p class="tension-avis">${escapeHtml(curve.avis)}</p>` : ""}
   </div>`;
 }
 
@@ -220,8 +230,13 @@ function initCharacterSheets(sheets, storyCollections) {
 }
 
 function initTextCollection(containerId, items, options) {
-  const { hashPrefix, sectionHash, backLabel, characterSheets } = options;
+  const { hashPrefix, sectionHash, backLabel, characterSheets, tensionCurves } = options;
   const container = document.getElementById(containerId);
+
+  function tensionChartFor(item) {
+    const curve = (tensionCurves ?? []).find((c) => c.story === item.title);
+    return curve ? renderTensionChart(curve, { showTitle: false, showAvis: true }) : "";
+  }
 
   if (!items || items.length === 0) {
     container.innerHTML = '<p class="empty-state">Rien à afficher pour le moment.</p>';
@@ -273,6 +288,7 @@ function initTextCollection(containerId, items, options) {
         <h3>${escapeHtml(item.title ?? "Sans titre")}</h3>
         ${item.note ? `<p class="evening-note">${escapeHtml(item.note)}</p>` : ""}
         ${item.warning ? `<p class="evening-warning">⚠️ ${escapeHtml(item.warning)}</p>` : ""}
+        ${tensionChartFor(item)}
         <div class="evening-content">${renderParagraphs(item.content)}</div>
         ${characterLinks(item)}
       </div>`;
@@ -301,6 +317,7 @@ loadData()
       sectionHash: "stories",
       backLabel: "Retour aux histoires",
       characterSheets: data.characterSheets,
+      tensionCurves: data.tensionCurves,
     });
     initCharacterSheets(data.characterSheets, [
       { items: data.stories, hashPrefix: "story" },
@@ -309,7 +326,7 @@ loadData()
     renderList("structure-notes-list", data.structureNotes, renderStructureNote);
     renderSeriesChecklist(data.seriesChecklist);
     document.getElementById("tension-charts-app").innerHTML = (data.tensionCurves ?? [])
-      .map(renderTensionChart)
+      .map((c) => renderTensionChart(c, { showTitle: true, showAvis: true }))
       .join("");
   })
   .catch((error) => {

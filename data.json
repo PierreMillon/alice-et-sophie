@@ -576,7 +576,16 @@
         2,
         2,
         1
-      ]
+      ],
+      "rythme": [
+        2,
+        2,
+        3,
+        3,
+        5
+      ],
+      "cliffhanger": 5,
+      "avis": "Formule complète et bien menée : protagonistes clairs, faux méchant (le bossu) qui détourne l'attention du vrai (le boucher), montée progressive. Cliffhanger fort mais aucune résolution publiée — à refermer un jour pour une vraie satisfaction de lecture."
     },
     {
       "story": "L'énigme de Nalchim",
@@ -600,7 +609,16 @@
         4,
         3,
         4
-      ]
+      ],
+      "rythme": [
+        3,
+        1,
+        4,
+        2,
+        3
+      ],
+      "cliffhanger": 4,
+      "avis": "Bon hameçon (énigme des pommes) et protagoniste engagée, mais l'antagoniste est désamorcé (Milan s'avère être la famille) — le doute retombe vite. Brouillon assumé, la résolution manque encore."
     },
     {
       "story": "La Sorcière des Carpates",
@@ -624,7 +642,16 @@
         4,
         3,
         2
-      ]
+      ],
+      "rythme": [
+        2,
+        2,
+        3,
+        3,
+        2
+      ],
+      "cliffhanger": 3,
+      "avis": "Mystère solide (la règle de Mustrius) mais l'enjeu est dilué : c'est un conte raconté à distance, pas un danger direct pour Alice/Sophie. Bonne voix, tension plus faible que les deux précédentes."
     },
     {
       "story": "Anomalie magnifique",
@@ -648,7 +675,16 @@
         1,
         4,
         1
-      ]
+      ],
+      "rythme": [
+        3,
+        2,
+        2,
+        4,
+        2
+      ],
+      "cliffhanger": 1,
+      "avis": "Pas d'antagoniste ni de doute, et c'est voulu — c'est un moment plutôt qu'une intrigue. Fonctionne comme respiration entre deux histoires sombres, pas comme suspense."
     },
     {
       "story": "Les Rêves Légendaires",
@@ -672,7 +708,16 @@
         3,
         3,
         2
-      ]
+      ],
+      "rythme": [
+        2,
+        3,
+        2,
+        2,
+        4
+      ],
+      "cliffhanger": 2,
+      "avis": "Registre onirique/intérieur où les tropes classiques (antagoniste, mystère) ne s'appliquent pas vraiment — cohérent avec son statut de spin-off à part, pas un défaut."
     }
   ]
 }
