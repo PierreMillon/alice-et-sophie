@@ -81,6 +81,12 @@ function renderStructureNote(note) {
   </li>`;
 }
 
+function storyHashMap(stories) {
+  const map = new Map();
+  (stories ?? []).forEach((s, i) => map.set(s.title, `#story-${i}`));
+  return map;
+}
+
 function checklistLegend(groups) {
   return (groups ?? [])
     .map(
@@ -92,7 +98,7 @@ function checklistLegend(groups) {
     .join("");
 }
 
-function renderSeriesChecklist(checklist) {
+function renderSeriesChecklist(checklist, storyHashes) {
   const container = document.getElementById("series-checklist-app");
   if (!checklist || !checklist.rows || checklist.rows.length === 0) {
     container.innerHTML = '<p class="empty-state">Rien à afficher pour le moment.</p>';
@@ -119,7 +125,11 @@ function renderSeriesChecklist(checklist) {
           return `<td class="${pass ? "check-yes" : "check-no"}${groupStart ? " group-start" : ""}">${pass ? "✓" : "—"}</td>`;
         })
         .join("");
-      return `<tr><th scope="row">${escapeHtml(row.story)}</th>${cells}</tr>`;
+      const href = storyHashes?.get(row.story);
+      const label = href
+        ? `<a class="checklist-story-link" href="${href}">${escapeHtml(row.story)}</a>`
+        : escapeHtml(row.story);
+      return `<tr><th scope="row">${label}</th>${cells}</tr>`;
     })
     .join("");
 
@@ -177,7 +187,7 @@ function scoreComfortArc(peur) {
 }
 
 function renderTensionChart(curve, options) {
-  const { showTitle = true, showAvis = true } = options ?? {};
+  const { showTitle = true, showAvis = true, storyHash = null } = options ?? {};
   const w = 280;
   const h = 90;
   const pad = 8;
@@ -213,8 +223,13 @@ function renderTensionChart(curve, options) {
       </p>`
     : "";
 
+  const titleText = escapeHtml(curve.story ?? "");
+  const titleHtml = showTitle
+    ? `<p class="tension-title">${storyHash ? `<a href="${storyHash}">${titleText}</a>` : titleText}</p>`
+    : "";
+
   return `<div class="tension-chart">
-    ${showTitle ? `<p class="tension-title">${escapeHtml(curve.story ?? "")}</p>` : ""}
+    ${titleHtml}
     <svg viewBox="0 0 ${w} ${h}" class="tension-svg" preserveAspectRatio="none">${lines}</svg>
     <div class="tension-legend">
       <span class="legend-dot tension-peur"></span>Peur
@@ -370,7 +385,11 @@ function initTextCollection(containerId, items, options) {
     if (!chart && !checklist) return "";
     return `<div class="story-analysis">
       <p class="story-analysis-title">Analyse de structure (rythme et checklist)</p>
-      <div class="story-analysis-body">${chart}${checklist}</div>
+      <div class="story-analysis-body">
+        ${chart}
+        ${checklist}
+        <a class="story-analysis-compare-link" href="#structure-notes">Voir toutes les histoires comparées →</a>
+      </div>
     </div>`;
   }
 
@@ -520,9 +539,10 @@ loadData()
     ]);
     renderList("architecture-notes-list", data.architectureNotes, renderArchitectureNote);
     renderList("structure-notes-list", data.structureNotes, renderStructureNote);
-    renderSeriesChecklist(data.seriesChecklist);
+    const storyHashes = storyHashMap(data.stories);
+    renderSeriesChecklist(data.seriesChecklist, storyHashes);
     document.getElementById("tension-charts-app").innerHTML = (data.tensionCurves ?? [])
-      .map((c) => renderTensionChart(c, { showTitle: true, showAvis: true }))
+      .map((c) => renderTensionChart(c, { showTitle: true, showAvis: true, storyHash: storyHashes.get(c.story) }))
       .join("");
     initSidebar(data.stories);
   })
