@@ -29,6 +29,11 @@ function renderParagraphs(content) {
     .join("");
 }
 
+function scrollSectionIntoView(container) {
+  const section = container.closest("section") ?? container;
+  section.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 function renderArchitectureNote(note) {
   return `<li class="architecture-card">
     <h3>${escapeHtml(note.title ?? "Sans titre")}</h3>
@@ -139,17 +144,20 @@ function initCharacterSheets(sheets, storyCollections) {
       </div>`;
   }
 
-  function route() {
+  function route(isNavigation) {
     const match = window.location.hash.match(/^#sheet-(\d+)$/);
     if (match) {
       showDetail(Number(match[1]));
     } else {
       showList();
     }
+    if (isNavigation) {
+      scrollSectionIntoView(container);
+    }
   }
 
-  window.addEventListener("hashchange", route);
-  route();
+  window.addEventListener("hashchange", () => route(true));
+  route(false);
 }
 
 function initTextCollection(containerId, items, options) {
@@ -211,17 +219,20 @@ function initTextCollection(containerId, items, options) {
       </div>`;
   }
 
-  function route() {
+  function route(isNavigation) {
     const match = window.location.hash.match(new RegExp(`^#${hashPrefix}-(\\d+)$`));
     if (match) {
       showDetail(Number(match[1]));
     } else {
       showList();
     }
+    if (isNavigation) {
+      scrollSectionIntoView(container);
+    }
   }
 
-  window.addEventListener("hashchange", route);
-  route();
+  window.addEventListener("hashchange", () => route(true));
+  route(false);
 }
 
 loadData()
