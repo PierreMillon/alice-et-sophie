@@ -379,6 +379,32 @@ section h2 {
   margin: 0 0 0.5rem;
 }
 
+.structure-heading {
+  margin-top: 2.5rem;
+  font-size: 1.3rem;
+  color: var(--color-black);
+}
+
+.structure-list {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.structure-card {
+  cursor: default;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+}
+
+.structure-card:hover {
+  transform: none;
+  box-shadow: 0 1px 3px rgba(22, 18, 19, 0.15);
+}
+
+.structure-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
 .architecture-section {
   background-color: #fff2ea;
   padding: 2.5rem 1rem;

@@ -286,16 +286,6 @@
       "analysis": "Mécanisme narratif : le deuil non résolu transformé en rituel perpétuel (la quête comme forme de déni). Pont temporel/générationnel possible avec Sophie. Piste à garder pour une histoire du soir distincte — attention à ne pas la confondre avec Benjamin et Clothilde (qui eux n'ont pas perdu d'enfant, juste tendance à l'abandon temporaire). Décision (validée) : c'est le même couple que « La Maison du Voyageur ». À transformer en nouvelle histoire dédiée où Sophie les croise. Reste à écrire."
     },
     {
-      "title": "Les Enquêteurs de l'Étrange — structure des récits emboîtés",
-      "rawNote": "Le fantastique n'est pas toujours vécu en direct : il peut être médiatisé par les journaux (faits divers découpés/analysés par les filles), les livres (textes méta où les personnages lisent ce que le lecteur lit), la tradition orale (histoires racontées par les parents pour justifier leur rôle d'enquêteurs). Thème de la méprise : on projette une explication surnaturelle sur un événement banal (\"quiproquo fantastique\"). Effet miroir : les parents deviennent acteurs en vérifiant si la fiction qu'ils lisent se produit réellement dans leur rue — trouble sur l'identité du narrateur.",
-      "analysis": "C'est une clé de lecture rétroactive très utile pour \"La Sorcière des Carpates\" : le texte a déjà cette forme de récit raconté à voix haute (une \"maman\" qui interrompt), ce qui correspond exactement à la \"tradition orale\" décrite ici. À utiliser consciemment pour les prochaines histoires du soir : préciser à chaque fois si le fantastique est vécu en direct par Alice/Sophie, ou médiatisé (journal, conte raconté, livre méta)."
-    },
-    {
-      "title": "Monomythe — ce qui fait ou ne fait pas une histoire",
-      "rawNote": "D'après le Voyage du Héros (Campbell), une histoire nécessite 3 piliers : causalité, changement, protagoniste. Ne sont PAS des histoires : le bruit blanc (événements sans lien causal), l'état stationnaire (rien ne change), la liste de données (un catalogue de faits), la sensation instantanée (un point, pas une ligne). \"Ce qui n'est pas une histoire, c'est ce qui ne devient rien d'autre.\"",
-      "analysis": "Grille de relecture à appliquer à chaque nouveau texte avant publication : est-ce que le protagoniste change réellement d'état (physique ou psychologique) entre le début et la fin ? Utile pour vérifier qu'une \"histoire du soir\" est bien une histoire et pas juste une ambiance ou une liste d'événements. Question ouverte laissée par la note : quel est le \"Gardien du Seuil\" (obstacle majeur) pour chaque personnage de l'atelier — à définir histoire par histoire."
-    },
-    {
       "title": "Titres et fragment de personnage — l'équipe de l'inventeur",
       "rawNote": "Listes de titres sombres (Le Cercueil des Ombres, L'Affection Noire des Onges, Les Sœurs Abysse, etc.) dans l'esprit horreur/gothique. Fragment de personnage : un membre de l'équipe d'un inventeur qui documente tout ce qu'il fait ; les filles s'en moquent un peu, préférant les gens qui réussissent directement — jusqu'à apprendre que c'est le même inventeur, et qu'il faut beaucoup d'échecs pour réussir une invention.",
       "analysis": "Le fragment de personnage porte une morale claire (l'échec comme chemin vers la réussite) qui contraste avec le ton horreur des titres — pourrait être un contrepoint plus léger dans une histoire, ou une sous-intrigue pédagogique dans une histoire du soir par ailleurs sombre. Titres à réserver comme réservoir pour de futures histoires du soir."
@@ -314,6 +304,32 @@
       "title": "Les Rêves Légendaires (2017, v1.0) — texte d'origine, hors continuité",
       "rawNote": "Texte de 2017 mettant en scène un \"Alice\" masculin (pronoms \"il\"), dans un village hivernal onirique, qui disparaît une nuit en poursuivant un rêve/visage. Aucun lien de personnages, d'époque ou de lieu avec l'atelier actuel.",
       "analysis": "Antériorité intéressante mais probablement sans lien de continuité avec les Alice et Sophie actuelles (7 et 9 ans, sœurs, entre-deux-guerres) — le nom \"Alice\" semble avoir été réutilisé plus tard pour un personnage complètement différent. Conservé comme archive/origine du nom, pas comme canon."
+    }
+  ],
+  "structureNotes": [
+    {
+      "title": "Les Enquêteurs de l'Étrange — récits emboîtés",
+      "keyPoints": [
+        "Le fantastique peut être vécu en direct par Alice/Sophie OU médiatisé : journaux découpés et analysés, livres méta (les personnages lisent ce que le lecteur lit), tradition orale (histoire racontée par un parent)",
+        "Thème de la méprise (« quiproquo fantastique ») : on projette une explication surnaturelle sur un événement banal",
+        "Effet miroir : les parents deviennent acteurs en vérifiant si la fiction qu'ils lisent se produit réellement dans leur rue — trouble sur l'identité du narrateur"
+      ],
+      "attentionPoints": [
+        "« La Sorcière des Carpates » applique déjà cette logique (tradition orale, une « maman » qui interrompt le conte) — premier exemple concret de cette structure dans l'atelier",
+        "Le « quiproquo fantastique » et l'effet miroir n'ont encore été utilisés dans aucune histoire — pistes à essayer pour un prochain texte"
+      ]
+    },
+    {
+      "title": "Monomythe — ce qui fait ou ne fait pas une histoire",
+      "keyPoints": [
+        "Une histoire nécessite 3 piliers : causalité, changement, protagoniste (Voyage du Héros, Campbell)",
+        "Ce qui n'est PAS une histoire : le bruit blanc (pas de causalité), l'état stationnaire (pas de changement), la liste de données (catalogue), la sensation instantanée (un point, pas une ligne)",
+        "« Ce qui n'est pas une histoire, c'est ce qui ne devient rien d'autre. »"
+      ],
+      "attentionPoints": [
+        "Grille à appliquer avant de publier une nouvelle histoire du soir : est-ce que le protagoniste change réellement d'état (physique ou psychologique) entre le début et la fin ?",
+        "Question laissée ouverte par la note d'origine : quel est le « Gardien du Seuil » (obstacle majeur) pour chaque personnage de l'atelier ? Pas encore défini pour Alice, Sophie, ou les autres."
+      ]
     }
   ]
 }

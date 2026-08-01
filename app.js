@@ -41,6 +41,19 @@ function renderArchitectureNote(note) {
   </li>`;
 }
 
+function renderStructureNote(note) {
+  const keyPoints = (note.keyPoints ?? []).map((point) => `<li>${escapeHtml(point)}</li>`).join("");
+  const attentionPoints = (note.attentionPoints ?? [])
+    .map((point) => `<p class="sheet-flag">⚠️ ${escapeHtml(point)}</p>`)
+    .join("");
+
+  return `<li class="sheet-preview structure-card">
+    <h3>${escapeHtml(note.title ?? "Sans titre")}</h3>
+    ${keyPoints ? `<ul class="sheet-traits">${keyPoints}</ul>` : ""}
+    ${attentionPoints ? `<div class="sheet-flags">${attentionPoints}</div>` : ""}
+  </li>`;
+}
+
 function initCharacterSheets(sheets) {
   const container = document.getElementById("character-sheets-app");
 
@@ -175,6 +188,7 @@ loadData()
     renderList("stories-list", data.stories, renderStory);
     initCharacterSheets(data.characterSheets);
     renderList("architecture-notes-list", data.architectureNotes, renderArchitectureNote);
+    renderList("structure-notes-list", data.structureNotes, renderStructureNote);
     initEveningStories(data.eveningStories);
   })
   .catch((error) => {
