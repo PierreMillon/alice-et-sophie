@@ -60,6 +60,12 @@ body {
   overflow-wrap: break-word;
 }
 
+.tagline {
+  margin: 0.5rem 0 0;
+  color: var(--color-black);
+  font-style: italic;
+}
+
 .site-nav {
   position: sticky;
   top: 0;
