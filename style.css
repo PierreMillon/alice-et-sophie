@@ -39,16 +39,6 @@ body {
   overflow: hidden;
 }
 
-.version-badge {
-  position: absolute;
-  top: 0.75rem;
-  left: 0.9rem;
-  color: var(--color-black);
-  font-size: 0.65rem;
-  letter-spacing: 0.03em;
-  opacity: 0.6;
-}
-
 .site-header h1 {
   margin: 0;
   font-family: var(--font-elegant);
@@ -58,6 +48,20 @@ body {
   color: var(--color-green);
   max-width: 100%;
   overflow-wrap: break-word;
+}
+
+.header-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.4rem;
+}
+
+.version-badge {
+  color: var(--color-black);
+  font-size: 0.65rem;
+  letter-spacing: 0.03em;
+  opacity: 0.6;
 }
 
 .tagline {
@@ -109,18 +113,12 @@ body {
 }
 
 .sidebar-toggle {
-  position: absolute;
-  top: 0.68rem;
-  right: 0.9rem;
   z-index: 20;
-  width: auto;
-  height: auto;
-  display: block;
+  display: flex;
+  align-items: center;
   border: none;
   background: none;
   color: var(--color-black);
-  font-size: 1.3rem;
-  line-height: 1;
   padding: 0;
   cursor: pointer;
 }
