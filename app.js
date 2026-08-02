@@ -48,10 +48,11 @@ function withInlineFlags(escapedText) {
   return escapedText.replace(/\[\[flag:(.*?)\]\]/g, '<span class="text-flag">⚠️ $1</span>');
 }
 
-function renderParagraphs(content) {
+function renderParagraphs(content, className = "") {
+  const classAttr = className ? ` class="${className}"` : "";
   return (content ?? "")
     .split(/\n\s*\n/)
-    .map((paragraph) => `<p>${withInlineFlags(escapeHtml(paragraph.trim()))}</p>`)
+    .map((paragraph) => `<p${classAttr}>${withInlineFlags(escapeHtml(paragraph.trim()))}</p>`)
     .join("");
 }
 
@@ -63,7 +64,7 @@ function scrollSectionIntoView(container) {
 function renderArchitectureNote(note, index) {
   return `<li class="architecture-card" id="architecture-note-${index}">
     <h3>${escapeHtml(note.title ?? "Sans titre")}</h3>
-    ${note.rawNote ? `<p class="architecture-raw">${escapeHtml(note.rawNote)}</p>` : ""}
+    ${note.rawNote ? renderParagraphs(note.rawNote, "architecture-raw") : ""}
     ${note.analysis ? `<p class="architecture-analysis"><strong>Logique extraite :</strong> ${escapeHtml(note.analysis)}</p>` : ""}
   </li>`;
 }
