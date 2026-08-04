@@ -1673,6 +1673,7 @@
     }
   ],
   "changelog": [
+    { "version": "v2.66", "summary": "Retire le lien « Retour en haut » du bas de l'historique des versions" },
     { "version": "v2.65", "summary": "Transition fluide (glissé + fondu) du bouton menu vers son état flottant" },
     { "version": "v2.64", "summary": "Bouton menu flottant dès qu'on défile la page" },
     { "version": "v2.63", "summary": "Numéro de version cliquable, ouvre l'historique des versions" },
