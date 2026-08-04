@@ -61,6 +61,13 @@ function scrollSectionIntoView(container) {
   section.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+function renderChangelogEntry(entry) {
+  return `<li class="changelog-entry">
+    <span class="changelog-version">${escapeHtml(entry.version)}</span>
+    <span class="changelog-summary">${escapeHtml(entry.summary)}</span>
+  </li>`;
+}
+
 function renderArchitectureNote(note, index) {
   return `<li class="architecture-card" id="architecture-note-${index}">
     <h3>${escapeHtml(note.title ?? "Sans titre")}</h3>
@@ -546,6 +553,7 @@ loadData()
     ]);
     renderList("architecture-notes-list", data.architectureNotes, renderArchitectureNote);
     renderList("structure-notes-list", data.structureNotes, renderStructureNote);
+    renderList("changelog-list", data.changelog, renderChangelogEntry);
     const storyHashes = storyHashMap(data.stories);
     renderSeriesChecklist(data.seriesChecklist, storyHashes);
     document.getElementById("tension-charts-app").innerHTML = (data.tensionCurves ?? [])
