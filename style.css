@@ -807,18 +807,6 @@ section h2 {
   color: var(--color-black);
 }
 
-.changelog-back {
-  display: inline-block;
-  margin-top: 1.5rem;
-  color: var(--color-red);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.changelog-back:hover {
-  text-decoration: underline;
-}
-
 .substructure-heading {
   margin-top: 2.5rem;
   font-size: 1.3rem;
