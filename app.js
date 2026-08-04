@@ -3,6 +3,18 @@ async function loadData() {
   return response.json();
 }
 
+(function initFloatingMenuButton() {
+  const toggle = document.getElementById("sidebar-toggle");
+  const header = document.querySelector(".site-header");
+  if (!toggle || !header) return;
+  function update() {
+    toggle.classList.toggle("is-floating", window.scrollY > header.offsetHeight);
+  }
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
+})();
+
 function escapeHtml(value) {
   const div = document.createElement("div");
   div.textContent = value ?? "";
