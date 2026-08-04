@@ -1,5 +1,8 @@
 async function loadData() {
-  const response = await fetch("data.json");
+  // Cache-bust on the site version so a new deploy always fetches fresh
+  // content instead of a stale cached data.json.
+  const version = document.getElementById("version-badge")?.textContent?.trim() || Date.now();
+  const response = await fetch(`data.json?v=${encodeURIComponent(version)}`);
   return response.json();
 }
 
