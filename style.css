@@ -134,6 +134,25 @@ body {
   color: var(--color-red);
 }
 
+.sidebar-toggle.is-floating {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 35;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  background-color: var(--color-black);
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.sidebar-toggle.is-floating:hover {
+  background-color: var(--color-red);
+  color: #fff;
+}
+
 .sidebar-overlay {
   position: fixed;
   inset: 0;
