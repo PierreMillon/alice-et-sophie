@@ -1671,5 +1671,17 @@
       "cliffhanger": 5,
       "avis": "Montée progressive très maîtrisée : la routine tranquille de Max (arrivage, cuisine) bascule paragraphe après paragraphe vers l'horreur (le mystère de la soupe, puis la révélation du trafic de touristes). Le texte s'arrête net sur les couteaux aiguisés et les clients qui s'installent — cliffhanger fort, aucune résolution publiée pour l'instant."
     }
+  ],
+  "changelog": [
+    { "version": "v2.63", "summary": "Numéro de version cliquable, ouvre l'historique des versions" },
+    { "version": "v2.62", "summary": "Accroche au-dessus du titre, sous-titre retiré" },
+    { "version": "v2.61", "summary": "Police du titre : Style Script" },
+    { "version": "v2.60", "summary": "Version et menu déplacés sous le titre, icône affinée" },
+    { "version": "v2.59", "summary": "Ajout du sous-titre « Le soir venu... »" },
+    { "version": "v2.58", "summary": "Intro Histoires et mot « Atelier » retirés" },
+    { "version": "v2.57", "summary": "Liserés des portraits corrigés, fond rouge de la photo de famille, icône menu simplifiée" },
+    { "version": "v2.56", "summary": "En-tête mobile réorganisé, note Bossu d'Argueil scindée en paragraphes" },
+    { "version": "v2.55", "summary": "Ajout du numéro de version" },
+    { "version": "avant v2.55", "summary": "Création du site : histoires, fiches personnages, portraits, checklist et graphiques de rythme, architecture de la série" }
   ]
 }
