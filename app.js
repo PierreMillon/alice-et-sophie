@@ -7,9 +7,29 @@ async function loadData() {
   const toggle = document.getElementById("sidebar-toggle");
   const header = document.querySelector(".site-header");
   if (!toggle || !header) return;
-  function update() {
-    toggle.classList.toggle("is-floating", window.scrollY > header.offsetHeight);
+
+  // FLIP technique: record the button's on-screen box before switching
+  // between docked (in-flow) and floating (fixed) positioning, then
+  // counter-translate it back to that box and let the CSS `transform`
+  // transition animate it smoothly to its new spot, instead of jumping.
+  function setFloating(shouldFloat) {
+    if (shouldFloat === toggle.classList.contains("is-floating")) return;
+    const before = toggle.getBoundingClientRect();
+    toggle.classList.toggle("is-floating", shouldFloat);
+    const after = toggle.getBoundingClientRect();
+    const dx = before.left - after.left;
+    const dy = before.top - after.top;
+    toggle.style.transition = "none";
+    toggle.style.transform = `translate(${dx}px, ${dy}px)`;
+    toggle.getBoundingClientRect(); // force reflow
+    toggle.style.transition = "";
+    toggle.style.transform = "";
   }
+
+  function update() {
+    setFloating(window.scrollY > header.offsetHeight);
+  }
+
   window.addEventListener("scroll", update, { passive: true });
   window.addEventListener("resize", update);
   update();
