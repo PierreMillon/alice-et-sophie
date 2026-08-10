@@ -23,7 +23,11 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
   overscroll-behavior-x: none;
-  touch-action: pan-y;
+  /* "pan-y" seul désactive aussi le pincement de zoom dans la plupart
+     des navigateurs (Safari iOS notamment) — corrigé le 10/08/2026,
+     le zoom doit rester possible partout, seul le zoom EN DESSOUS de
+     100% est bloqué (minimum-scale=1.0 sur le viewport). */
+  touch-action: pan-y pinch-zoom;
 }
 
 body {
