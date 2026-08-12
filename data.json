@@ -1821,6 +1821,7 @@
     }
   ],
   "changelog": [
+    { "version": "v2.71", "summary": "Corrige le contraste visage/cheveux de l'icône en mode couleurs réduites (teintes iOS)" },
     { "version": "v2.70", "summary": "Relance du déploiement resté bloqué (icône iPhone)" },
     { "version": "v2.69", "summary": "Icône d'écran d'accueil iPhone (Alice, fond rouge)" },
     { "version": "v2.68", "summary": "Fin de « La Vipère sous l'Océan » (Actes I-V) + nouvelle histoire « Bac à Charlotte »" },
