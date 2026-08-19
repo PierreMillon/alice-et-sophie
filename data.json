@@ -1821,6 +1821,7 @@
     }
   ],
   "changelog": [
+    { "version": "v2.72", "summary": "Mode hors-ligne : le site fonctionne même sans réseau après une première visite" },
     { "version": "v2.71", "summary": "Corrige le contraste visage/cheveux de l'icône en mode couleurs réduites (teintes iOS)" },
     { "version": "v2.70", "summary": "Relance du déploiement resté bloqué (icône iPhone)" },
     { "version": "v2.69", "summary": "Icône d'écran d'accueil iPhone (Alice, fond rouge)" },

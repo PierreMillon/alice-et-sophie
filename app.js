@@ -599,3 +599,13 @@ loadData()
   .catch((error) => {
     console.error("Impossible de charger data.json :", error);
   });
+
+// Mode hors-ligne (service worker, voir sw.js) : une fois le site
+// visité une première fois avec réseau, il reste utilisable sans
+// connexion. Garde standard, échec silencieux si indisponible — le
+// site continue de fonctionner normalement, juste sans mode hors-ligne.
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch(() => {});
+  });
+}
